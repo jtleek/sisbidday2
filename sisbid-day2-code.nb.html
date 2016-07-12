@@ -637,56 +637,247 @@ dim(jsonData)</code></pre>
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin -->
-<pre class="r"><code>table(sapply(jsonData,class))</code></pre>
+<pre class="r"><code>table(sapply(jsonData,class))
+dim(jsonData$owner)
+names(jsonData$owner)
+jsonData$owner$html_url</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiXG4gY2hhcmFjdGVyIGRhdGEuZnJhbWUgICAgaW50ZWdlciAgICBsb2dpY2FsIFxuICAgICAgICA1MSAgICAgICAgICAxICAgICAgICAgIDkgICAgICAgICAgNyBcbiJ9 -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Do the lab really quick</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>github_url = &quot;https://api.github.com/users/hadley/repos&quot;
+jsonData &lt;- fromJSON(github_url)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Look at the names of the variables</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>names(jsonData)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcImlkXCIgICAgICAgICAgICAgICAgXCJuYW1lXCIgICAgICAgICAgICAgIFwiZnVsbF9uYW1lXCIgICAgICAgIFxuIFs0XSBcIm93bmVyXCIgICAgICAgICAgICAgXCJwcml2YXRlXCIgICAgICAgICAgIFwiaHRtbF91cmxcIiAgICAgICAgIFxuIFs3XSBcImRlc2NyaXB0aW9uXCIgICAgICAgXCJmb3JrXCIgICAgICAgICAgICAgIFwidXJsXCIgICAgICAgICAgICAgIFxuWzEwXSBcImZvcmtzX3VybFwiICAgICAgICAgXCJrZXlzX3VybFwiICAgICAgICAgIFwiY29sbGFib3JhdG9yc191cmxcIlxuWzEzXSBcInRlYW1zX3VybFwiICAgICAgICAgXCJob29rc191cmxcIiAgICAgICAgIFwiaXNzdWVfZXZlbnRzX3VybFwiIFxuWzE2XSBcImV2ZW50c191cmxcIiAgICAgICAgXCJhc3NpZ25lZXNfdXJsXCIgICAgIFwiYnJhbmNoZXNfdXJsXCIgICAgIFxuWzE5XSBcInRhZ3NfdXJsXCIgICAgICAgICAgXCJibG9ic191cmxcIiAgICAgICAgIFwiZ2l0X3RhZ3NfdXJsXCIgICAgIFxuWzIyXSBcImdpdF9yZWZzX3VybFwiICAgICAgXCJ0cmVlc191cmxcIiAgICAgICAgIFwic3RhdHVzZXNfdXJsXCIgICAgIFxuWzI1XSBcImxhbmd1YWdlc191cmxcIiAgICAgXCJzdGFyZ2F6ZXJzX3VybFwiICAgIFwiY29udHJpYnV0b3JzX3VybFwiIFxuWzI4XSBcInN1YnNjcmliZXJzX3VybFwiICAgXCJzdWJzY3JpcHRpb25fdXJsXCIgIFwiY29tbWl0c191cmxcIiAgICAgIFxuWzMxXSBcImdpdF9jb21taXRzX3VybFwiICAgXCJjb21tZW50c191cmxcIiAgICAgIFwiaXNzdWVfY29tbWVudF91cmxcIlxuWzM0XSBcImNvbnRlbnRzX3VybFwiICAgICAgXCJjb21wYXJlX3VybFwiICAgICAgIFwibWVyZ2VzX3VybFwiICAgICAgIFxuWzM3XSBcImFyY2hpdmVfdXJsXCIgICAgICAgXCJkb3dubG9hZHNfdXJsXCIgICAgIFwiaXNzdWVzX3VybFwiICAgICAgIFxuWzQwXSBcInB1bGxzX3VybFwiICAgICAgICAgXCJtaWxlc3RvbmVzX3VybFwiICAgIFwibm90aWZpY2F0aW9uc191cmxcIlxuWzQzXSBcImxhYmVsc191cmxcIiAgICAgICAgXCJyZWxlYXNlc191cmxcIiAgICAgIFwiZGVwbG95bWVudHNfdXJsXCIgIFxuWzQ2XSBcImNyZWF0ZWRfYXRcIiAgICAgICAgXCJ1cGRhdGVkX2F0XCIgICAgICAgIFwicHVzaGVkX2F0XCIgICAgICAgIFxuWzQ5XSBcImdpdF91cmxcIiAgICAgICAgICAgXCJzc2hfdXJsXCIgICAgICAgICAgIFwiY2xvbmVfdXJsXCIgICAgICAgIFxuWzUyXSBcInN2bl91cmxcIiAgICAgICAgICAgXCJob21lcGFnZVwiICAgICAgICAgIFwic2l6ZVwiICAgICAgICAgICAgIFxuWzU1XSBcInN0YXJnYXplcnNfY291bnRcIiAgXCJ3YXRjaGVyc19jb3VudFwiICAgIFwibGFuZ3VhZ2VcIiAgICAgICAgIFxuWzU4XSBcImhhc19pc3N1ZXNcIiAgICAgICAgXCJoYXNfZG93bmxvYWRzXCIgICAgIFwiaGFzX3dpa2lcIiAgICAgICAgIFxuWzYxXSBcImhhc19wYWdlc1wiICAgICAgICAgXCJmb3Jrc19jb3VudFwiICAgICAgIFwibWlycm9yX3VybFwiICAgICAgIFxuWzY0XSBcIm9wZW5faXNzdWVzX2NvdW50XCIgXCJmb3Jrc1wiICAgICAgICAgICAgIFwib3Blbl9pc3N1ZXNcIiAgICAgIFxuWzY3XSBcIndhdGNoZXJzXCIgICAgICAgICAgXCJkZWZhdWx0X2JyYW5jaFwiICAgXG4ifQ== -->
+<pre><code> [1] &quot;id&quot;                &quot;name&quot;              &quot;full_name&quot;        
+ [4] &quot;owner&quot;             &quot;private&quot;           &quot;html_url&quot;         
+ [7] &quot;description&quot;       &quot;fork&quot;              &quot;url&quot;              
+[10] &quot;forks_url&quot;         &quot;keys_url&quot;          &quot;collaborators_url&quot;
+[13] &quot;teams_url&quot;         &quot;hooks_url&quot;         &quot;issue_events_url&quot; 
+[16] &quot;events_url&quot;        &quot;assignees_url&quot;     &quot;branches_url&quot;     
+[19] &quot;tags_url&quot;          &quot;blobs_url&quot;         &quot;git_tags_url&quot;     
+[22] &quot;git_refs_url&quot;      &quot;trees_url&quot;         &quot;statuses_url&quot;     
+[25] &quot;languages_url&quot;     &quot;stargazers_url&quot;    &quot;contributors_url&quot; 
+[28] &quot;subscribers_url&quot;   &quot;subscription_url&quot;  &quot;commits_url&quot;      
+[31] &quot;git_commits_url&quot;   &quot;comments_url&quot;      &quot;issue_comment_url&quot;
+[34] &quot;contents_url&quot;      &quot;compare_url&quot;       &quot;merges_url&quot;       
+[37] &quot;archive_url&quot;       &quot;downloads_url&quot;     &quot;issues_url&quot;       
+[40] &quot;pulls_url&quot;         &quot;milestones_url&quot;    &quot;notifications_url&quot;
+[43] &quot;labels_url&quot;        &quot;releases_url&quot;      &quot;deployments_url&quot;  
+[46] &quot;created_at&quot;        &quot;updated_at&quot;        &quot;pushed_at&quot;        
+[49] &quot;git_url&quot;           &quot;ssh_url&quot;           &quot;clone_url&quot;        
+[52] &quot;svn_url&quot;           &quot;homepage&quot;          &quot;size&quot;             
+[55] &quot;stargazers_count&quot;  &quot;watchers_count&quot;    &quot;language&quot;         
+[58] &quot;has_issues&quot;        &quot;has_downloads&quot;     &quot;has_wiki&quot;         
+[61] &quot;has_pages&quot;         &quot;forks_count&quot;       &quot;mirror_url&quot;       
+[64] &quot;open_issues_count&quot; &quot;forks&quot;             &quot;open_issues&quot;      
+[67] &quot;watchers&quot;          &quot;default_branch&quot;   </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>jsonData$stargazers_count</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgMjQgIDEzICAgMCA3ODUgICAzICA2MiAgMzkgICA3ICAgMyAyNDAgICA1ICAxMCAgIDYgICAwICAgMCAgIDZcblsxN10gIDEyICAgNyAgIDMgICA0ICAgNCAgMzMgIDkxICAxOCAgMTQgICAzICAzNCAgNzcgICAyICA0NFxuIn0= -->
+<pre><code> [1]  24  13   0 785   3  62  39   7   3 240   5  10   6   0   0   6
+[17]  12   7   3   4   4  33  91  18  14   3  34  77   2  44</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>jsonData$open_issues</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgMCAgMCAgMCA5NSAgMCAyMCAgMyAgMCAgMCAgNCAgMCAgMCAgMCAgMCAgMCAgMCAgMSAgMCAgMSAgMCAgMFxuWzIyXSAxMyAgMSAgMCAgMCAgMCAgNCAgMyAgMCAgMFxuIn0= -->
+<pre><code> [1]  0  0  0 95  0 20  3  0  0  4  0  0  0  0  0  0  1  0  1  0  0
+[22] 13  1  0  0  0  4  3  0  0</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Safari -&gt; preferences -&gt; advanced -&gt; checkbox “show development menu in menu bar” Button on top where you can click “developer menu”</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>install.packages(&quot;rvest&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYWxzbyBpbnN0YWxsaW5nIHRoZSBkZXBlbmRlbmN5IOKAmHNlbGVjdHLigJlcblxudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi9tYWNvc3gvbWF2ZXJpY2tzL2NvbnRyaWIvMy4zL3NlbGVjdHJfMC4yLTMudGd6J1xuQ29udGVudCB0eXBlICdhcHBsaWNhdGlvbi94LWd6aXAnIGxlbmd0aCAxNTE3NzUgYnl0ZXMgKDE0OCBLQilcbj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09XG5kb3dubG9hZGVkIDE0OCBLQlxuXG50cnlpbmcgVVJMICdodHRwczovL2NyYW4ucnN0dWRpby5jb20vYmluL21hY29zeC9tYXZlcmlja3MvY29udHJpYi8zLjMvcnZlc3RfMC4zLjIudGd6J1xuQ29udGVudCB0eXBlICdhcHBsaWNhdGlvbi94LWd6aXAnIGxlbmd0aCA4NTE0MDIgYnl0ZXMgKDgzMSBLQilcbj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09XG5kb3dubG9hZGVkIDgzMSBLQlxuIn0= -->
+<pre><code>also installing the dependency ‘selectr’
+
+trying URL 'https://cran.rstudio.com/bin/macosx/mavericks/contrib/3.3/selectr_0.2-3.tgz'
+Content type 'application/x-gzip' length 151775 bytes (148 KB)
+==================================================
+downloaded 148 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/mavericks/contrib/3.3/rvest_0.3.2.tgz'
+Content type 'application/x-gzip' length 851402 bytes (831 KB)
+==================================================
+downloaded 831 KB</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5UaGUgZG93bmxvYWRlZCBiaW5hcnkgcGFja2FnZXMgYXJlIGluXG5cdC92YXIvZm9sZGVycy94cy9iZzdfMzR0ZDc5bGYycDNxN2diM3BzdjgwMDAwZ24vVC8vUnRtcHJxanh6SC9kb3dubG9hZGVkX3BhY2thZ2VzXG4ifQ== -->
 <pre><code>
- character data.frame    integer    logical 
-        51          1          9          7 </code></pre>
+The downloaded binary packages are in
+    /var/folders/xs/bg7_34td79lf2p3q7gb3psv80000gn/T//RtmprqjxzH/downloaded_packages</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin -->
-<pre class="r"><code>dim(jsonData$owner)</code></pre>
+<pre class="r"><code>library(rvest)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDMwIDE3XG4ifQ== -->
-<pre><code>[1] 30 17</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiTG9hZGluZyByZXF1aXJlZCBwYWNrYWdlOiB4bWwyXG4ifQ== -->
+<pre><code>Loading required package: xml2</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>recount_url = &quot;http://bowtie-bio.sourceforge.net/recount/&quot;
+htmlfile = read_html(recount_url)
+htmlfile</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoie3htbF9kb2N1bWVudH1cbjxodG1sIHhtbG5zPVwiaHR0cDovL3d3dy53My5vcmcvMTk5OS94aHRtbFwiPlxuWzFdIDxoZWFkPlxcbiAgPHNjcmlwdCBzcmM9XCJzb3J0dGFibGUuanNcIiB0eXBlPVwidGV4dC9qYXZhc2NyaXB0XCI+PC8gLi4uXG5bMl0gPGJvZHkgY2xhc3M9XCJjMjBcIj4mIzEzO1xcbjxkaXYgaWQ9XCJ3cmFwXCI+JiMxMztcXG4gICAgPGRpdiBpZD1cInRvIC4uLlxuIn0= -->
+<pre><code>{xml_document}
+&lt;html xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;
+[1] &lt;head&gt;\n  &lt;script src=&quot;sorttable.js&quot; type=&quot;text/javascript&quot;&gt;&lt;/ ...
+[2] &lt;body class=&quot;c20&quot;&gt;&amp;#13;\n&lt;div id=&quot;wrap&quot;&gt;&amp;#13;\n    &lt;div id=&quot;to ...</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>nds = html_nodes(htmlfile,                
+xpath='//*[@id=&quot;recounttab&quot;]/table')
+nds</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoie3htbF9ub2Rlc2V0ICgxKX1cblsxXSA8dGFibGUgY2xhc3M9XCJzb3J0YWJsZVwiPlxcbiAgPHRib2R5PlxcbiAgICA8dHI+PHRkPlN0dWR5PC90ZD5cXG48IC4uLlxuIn0= -->
+<pre><code>{xml_nodeset (1)}
+[1] &lt;table class=&quot;sortable&quot;&gt;\n  &lt;tbody&gt;\n    &lt;tr&gt;&lt;td&gt;Study&lt;/td&gt;\n&lt; ...</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>dat = html_table(nds)
+dat = as.data.frame(dat)
+head(dat)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgIFgxICAgICAgIFgyICAgICAgWDMgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgWDRcbjEgICBTdHVkeSAgICAgUE1JRCBTcGVjaWVzICBOdW1iZXIgb2YgYmlvbG9naWNhbCByZXBsaWNhdGVzXG4yIGJvZHltYXAgMjI0OTY0NTYgICBodW1hbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAxOVxuMyAgY2hldW5nIDIwODU2OTAyICAgaHVtYW4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNDFcbjQgICAgY29yZSAxOTA1Njk0MSAgIGh1bWFuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAyXG41ICAgZ2lsYWQgMjAwMDkwMTIgICBodW1hbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNlxuNiAgICBtYXFjIDIwMTY3MTEwICAgaHVtYW4gMTQgKHRlY2huaWNhbCkqKiAgMiAoYmlvbG9naWNhbClcbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgWDUgICAgICAgICAgICAgIFg2ICAgICAgICAgICAgICBYN1xuMSBOdW1iZXIgb2YgdW5pcXVlbHkgYWxpZ25lZCByZWFkcyAgIEV4cHJlc3Npb25TZXQgICAgIENvdW50IHRhYmxlXG4yICAgICAgICAgICAgICAgICAgICAyLDE5Nyw2MjIsNzk2ICAgICAgICAgICAgbGluayAgICAgICAgICAgIGxpbmtcbjMgICAgICAgICAgICAgICAgICAgICAgODM0LDU4NCw5NTAgICAgICAgICAgICBsaW5rICAgICAgICAgICAgbGlua1xuNCAgICAgICAgICAgICAgICAgICAgICAgIDgsNjcwLDM0MiAgICAgICAgICAgIGxpbmsgICAgICAgICAgICBsaW5rXG41ICAgICAgICAgICAgICAgICAgICAgICA0MSwzNTYsNzM4ICAgICAgICAgICAgbGluayAgICAgICAgICAgIGxpbmtcbjYgICAgICAgICAgICAgICAgICAgICAgIDcxLDk3MCwxNjQgb3JpZ2luYWwgcG9vbGVkIG9yaWdpbmFsIHBvb2xlZFxuICAgICAgICAgICAgICAgWDggICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgWDlcbjEgUGhlbm90eXBlIHRhYmxlICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIE5vdGVzXG4yICAgICAgICAgICAgbGluayBJbGx1bWluYSBIdW1hbiBCb2R5TWFwIDIuMCAtLSB0aXNzdWUgY29tcGFyaXNvblxuMyAgICAgICAgICAgIGxpbmsgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBIYXBNYXAgLSBDRVVcbjQgICAgICAgICAgICBsaW5rICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBsdW5nIGZpYnJvYmxhc3RzXG41ICAgICAgICAgICAgbGluayAgICAgICAgICAgICAgICAgICAgICAgIGxpdmVyOyBtYWxlcyBhbmQgZmVtbGFlc1xuNiBvcmlnaW5hbCBwb29sZWQgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBleHBlcmltZW50OiBNQVFDLTJcbiJ9 -->
+<pre><code>       X1       X2      X3                               X4
+1   Study     PMID Species  Number of biological replicates
+2 bodymap 22496456   human                               19
+3  cheung 20856902   human                               41
+4    core 19056941   human                                2
+5   gilad 20009012   human                                6
+6    maqc 20167110   human 14 (technical)**  2 (biological)
+                                X5              X6              X7
+1 Number of uniquely aligned reads   ExpressionSet     Count table
+2                    2,197,622,796            link            link
+3                      834,584,950            link            link
+4                        8,670,342            link            link
+5                       41,356,738            link            link
+6                       71,970,164 original pooled original pooled
+               X8                                              X9
+1 Phenotype table                                           Notes
+2            link Illumina Human BodyMap 2.0 -- tissue comparison
+3            link                                    HapMap - CEU
+4            link                                lung fibroblasts
+5            link                        liver; males and femlaes
+6 original pooled                              experiment: MAQC-2</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin -->
-<pre class="r"><code>names(jsonData$owner)</code></pre>
+<pre class="r"><code>names(dat) = dat[1,]
+dat[-1,]</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcImxvZ2luXCIgICAgICAgICAgICAgICBcImlkXCIgICAgICAgICAgICAgICAgICBcImF2YXRhcl91cmxcIiAgICAgICAgIFxuIFs0XSBcImdyYXZhdGFyX2lkXCIgICAgICAgICBcInVybFwiICAgICAgICAgICAgICAgICBcImh0bWxfdXJsXCIgICAgICAgICAgIFxuIFs3XSBcImZvbGxvd2Vyc191cmxcIiAgICAgICBcImZvbGxvd2luZ191cmxcIiAgICAgICBcImdpc3RzX3VybFwiICAgICAgICAgIFxuWzEwXSBcInN0YXJyZWRfdXJsXCIgICAgICAgICBcInN1YnNjcmlwdGlvbnNfdXJsXCIgICBcIm9yZ2FuaXphdGlvbnNfdXJsXCIgIFxuWzEzXSBcInJlcG9zX3VybFwiICAgICAgICAgICBcImV2ZW50c191cmxcIiAgICAgICAgICBcInJlY2VpdmVkX2V2ZW50c191cmxcIlxuWzE2XSBcInR5cGVcIiAgICAgICAgICAgICAgICBcInNpdGVfYWRtaW5cIiAgICAgICAgIFxuIn0= -->
-<pre><code> [1] &quot;login&quot;               &quot;id&quot;                  &quot;avatar_url&quot;         
- [4] &quot;gravatar_id&quot;         &quot;url&quot;                 &quot;html_url&quot;           
- [7] &quot;followers_url&quot;       &quot;following_url&quot;       &quot;gists_url&quot;          
-[10] &quot;starred_url&quot;         &quot;subscriptions_url&quot;   &quot;organizations_url&quot;  
-[13] &quot;repos_url&quot;           &quot;events_url&quot;          &quot;received_events_url&quot;
-[16] &quot;type&quot;                &quot;site_admin&quot;         </code></pre>
-<!-- rnb-output-end -->
-<!-- rnb-source-begin -->
-<pre class="r"><code>jsonData$owner$html_url</code></pre>
-<!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuIFszXSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuIFs1XSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuIFs3XSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuIFs5XSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuWzExXSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuWzEzXSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuWzE1XSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuWzE3XSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuWzE5XSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuWzIxXSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuWzIzXSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuWzI1XSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuWzI3XSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuWzI5XSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuIn0= -->
-<pre><code> [1] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
- [3] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
- [5] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
- [7] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
- [9] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
-[11] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
-[13] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
-[15] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
-[17] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
-[19] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
-[21] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
-[23] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
-[25] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
-[27] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
-[29] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;</code></pre>
+<!-- rnb-output-begin eyJkYXRhIjoiICAgICAgICAgICBTdHVkeSAgICAgUE1JRCBTcGVjaWVzICAgIE51bWJlciBvZiBiaW9sb2dpY2FsIHJlcGxpY2F0ZXNcbjIgICAgICAgIGJvZHltYXAgMjI0OTY0NTYgICBodW1hbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDE5XG4zICAgICAgICAgY2hldW5nIDIwODU2OTAyICAgaHVtYW4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA0MVxuNCAgICAgICAgICAgY29yZSAxOTA1Njk0MSAgIGh1bWFuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDJcbjUgICAgICAgICAgZ2lsYWQgMjAwMDkwMTIgICBodW1hbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA2XG42ICAgICAgICAgICBtYXFjIDIwMTY3MTEwICAgaHVtYW4gICAxNCAodGVjaG5pY2FsKSoqICAyIChiaW9sb2dpY2FsKVxuNyAgICAgbW9udGdvbWVyeSAyMDIyMDc1NiAgIGh1bWFuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNjBcbjggICAgICAgcGlja3JlbGwgMjAyMjA3NTggICBodW1hbiAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDY5XG45ICAgICAgICAgc3VsdGFuIDE4NTk5NzQxICAgaHVtYW4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgNFxuMTAgICAgICAgICAgd2FuZyAxODk3ODc3MiAgIGh1bWFuICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgMjJcbjExICAgIGthdHoubW91c2UgMjEwNTc0OTYgICBtb3VzZSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA0XG4xMiAgICAgbW9ydGF6YXZpIDE4NTE2MDQ1ICAgbW91c2UgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgM1xuMTMgICAgICB0cmFwbmVsbCAyMDQzNjQ2NCAgIG1vdXNlICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDRcbjE0ICAgICAgICAgIHlhbmcgMjAzNjM5ODAgICBtb3VzZSAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAxXG4xNSAgICAgIGJvdHRvbWx5IDIxNDU1MjkzICAgbW91c2UgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAyMVxuMTYgICBuYWdhbGFrc2htaSAxODQ1MTI2NiAgIHllYXN0ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIDRcbjE3ICAgICAgICBoYW1tZXIgMjA0NTI5NjcgICAgIHJhdCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA4XG4xOCBtb2RlbmNvZGV3b3JtIDE5MTgxODQxICAgIHdvcm0gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICA0NlxuMTkgIG1vZGVuY29kZWZseSAyMTE3OTA5MCAgICAgZmx5IDE0NyAodGVjaG5pY2FsKSoqICAzMCAoYmlvbG9naWNhbClcbiAgIE51bWJlciBvZiB1bmlxdWVseSBhbGlnbmVkIHJlYWRzICAgIEV4cHJlc3Npb25TZXRcbjIgICAgICAgICAgICAgICAgICAgICAyLDE5Nyw2MjIsNzk2ICAgICAgICAgICAgIGxpbmtcbjMgICAgICAgICAgICAgICAgICAgICAgIDgzNCw1ODQsOTUwICAgICAgICAgICAgIGxpbmtcbjQgICAgICAgICAgICAgICAgICAgICAgICAgOCw2NzAsMzQyICAgICAgICAgICAgIGxpbmtcbjUgICAgICAgICAgICAgICAgICAgICAgICA0MSwzNTYsNzM4ICAgICAgICAgICAgIGxpbmtcbjYgICAgICAgICAgICAgICAgICAgICAgICA3MSw5NzAsMTY0ICBvcmlnaW5hbCBwb29sZWRcbjcgICAgICAgICAgICAgICAgICAgICAgKjg4Niw0NjgsMDU0ICAgICAgICAgICAgIGxpbmtcbjggICAgICAgICAgICAgICAgICAgICAgKjg4Niw0NjgsMDU0ICAgICAgICAgICAgIGxpbmtcbjkgICAgICAgICAgICAgICAgICAgICAgICAgNiw1NzMsNjQzICAgICAgICAgICAgIGxpbmtcbjEwICAgICAgICAgICAgICAgICAgICAgIDIyMyw5MjksOTE5ICAgICAgICAgICAgIGxpbmtcbjExICAgICAgICAgICAgICAgICAgICAgICAxNCwzNjgsNDcxICAgICAgICAgICAgIGxpbmtcbjEyICAgICAgICAgICAgICAgICAgICAgICA2MSw3MzIsODgxICAgICAgICAgICAgIGxpbmtcbjEzICAgICAgICAgICAgICAgICAgICAgIDExMSwzNzYsMTUyICAgICAgICAgICAgIGxpbmtcbjE0ICAgICAgICAgICAgICAgICAgICAgICAyNyw4ODMsODYyICAgICAgICAgICAgIGxpbmtcbjE1ICAgICAgICAgICAgICAgICAgICAgIDM0Myw0NDUsMzQwICAgICAgICAgICAgIGxpbmtcbjE2ICAgICAgICAgICAgICAgICAgICAgICAgNyw2ODgsNjAyICAgICAgICAgICAgIGxpbmtcbjE3ICAgICAgICAgICAgICAgICAgICAgIDE1OCwxNzgsNDc3ICAgICAgICAgICAgIGxpbmtcbjE4ICAgICAgICAgICAgICAgICAgICAxLDQ1MSwxMTksODIzICAgICAgICAgICAgIGxpbmtcbjE5ICAgICAgICAgICAgICAgICAgICAyLDI3OCw3ODgsNTU3IG9yaWdpbmFsICBwb29sZWRcbiAgICAgICAgQ291bnQgdGFibGUgUGhlbm90eXBlIHRhYmxlXG4yICAgICAgICAgICAgICBsaW5rICAgICAgICAgICAgbGlua1xuMyAgICAgICAgICAgICAgbGluayAgICAgICAgICAgIGxpbmtcbjQgICAgICAgICAgICAgIGxpbmsgICAgICAgICAgICBsaW5rXG41ICAgICAgICAgICAgICBsaW5rICAgICAgICAgICAgbGlua1xuNiAgIG9yaWdpbmFsIHBvb2xlZCBvcmlnaW5hbCBwb29sZWRcbjcgICAgICAgICAgICAgIGxpbmsgICAgICAgICAgICBsaW5rXG44ICAgICAgICAgICAgICBsaW5rICAgICAgICAgICAgbGlua1xuOSAgICAgICAgICAgICAgbGluayAgICAgICAgICAgIGxpbmtcbjEwICAgICAgICAgICAgIGxpbmsgICAgICAgICAgICBsaW5rXG4xMSAgICAgICAgICAgICBsaW5rICAgICAgICAgICAgbGlua1xuMTIgICAgICAgICAgICAgbGluayAgICAgICAgICAgIGxpbmtcbjEzICAgICAgICAgICAgIGxpbmsgICAgICAgICAgICBsaW5rXG4xNCAgICAgICAgICAgICBsaW5rICAgICAgICAgICAgbGlua1xuMTUgICAgICAgICAgICAgbGluayAgICAgICAgICAgIGxpbmtcbjE2ICAgICAgICAgICAgIGxpbmsgICAgICAgICAgICBsaW5rXG4xNyAgICAgICAgICAgICBsaW5rICAgICAgICAgICAgbGlua1xuMTggICAgICAgICAgICAgbGluayAgICAgICAgICAgIGxpbmtcbjE5IG9yaWdpbmFsICBwb29sZWQgb3JpZ2luYWwgcG9vbGVkXG4gICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBOb3Rlc1xuMiAgSWxsdW1pbmEgSHVtYW4gQm9keU1hcCAyLjAgLS0gdGlzc3VlIGNvbXBhcmlzb25cbjMgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgSGFwTWFwIC0gQ0VVXG40ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgbHVuZyBmaWJyb2JsYXN0c1xuNSAgICAgICAgICAgICAgICAgICAgICAgICBsaXZlcjsgbWFsZXMgYW5kIGZlbWxhZXNcbjYgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgZXhwZXJpbWVudDogTUFRQy0yXG43ICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIEhhcE1hcCAtIENFVVxuOCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICBIYXBNYXAgLSBZUklcbjkgICAgICAgICAgICAgICAgICAgICAgICAgICAgIGNlbGwgdHlwZSBjb21wYXJpc29uXG4xMCAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0aXNzdWUgY29tcGFyaXNvblxuMTEgICAgICAgICBjb250cm9sIHZzLiBDVUctQlAxIGtub2NrZG93biBteW9ibGFzdHNcbjEyICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgIHRpc3N1ZSBjb21wYXJpc29uXG4xMyAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICAgICB0aW1lIGNvdXJzZVxuMTQgICAgICAgICAgICAgaHlicmlkIGNlbGwgbGluZSwgWCBhbHdheXMgaW5hY3RpdmVcbjE1ICAgICAgICAgICAgICAgICAgICAgICAgICAyIGluYnJlZCBtb3VzZSBzdHJhaW5zXG4xNiAgICAgICAgICAgICAgICAgICAgcHJpbWluZyB0ZWNobmlxdWUgY29tcGFyaXNvblxuMTcgICAgICAgZXhwZXJpbWVudGFsIHZzLiBjb250cm9sIGF0IDIgdGltZSBwb2ludHNcbjE4ICAgICAgICAgICAgICAgICAgICAgICBkZXZlbG9wbWVudGFsIHRpbWUgY291cnNlXG4xOSAgICAgICAgICAgICAgICAgICAgICAgZGV2ZWxvcG1lbnRhbCB0aW1lIGNvdXJzZVxuIn0= -->
+<pre><code>           Study     PMID Species    Number of biological replicates
+2        bodymap 22496456   human                                 19
+3         cheung 20856902   human                                 41
+4           core 19056941   human                                  2
+5          gilad 20009012   human                                  6
+6           maqc 20167110   human   14 (technical)**  2 (biological)
+7     montgomery 20220756   human                                 60
+8       pickrell 20220758   human                                 69
+9         sultan 18599741   human                                  4
+10          wang 18978772   human                                 22
+11    katz.mouse 21057496   mouse                                  4
+12     mortazavi 18516045   mouse                                  3
+13      trapnell 20436464   mouse                                  4
+14          yang 20363980   mouse                                  1
+15      bottomly 21455293   mouse                                 21
+16   nagalakshmi 18451266   yeast                                  4
+17        hammer 20452967     rat                                  8
+18 modencodeworm 19181841    worm                                 46
+19  modencodefly 21179090     fly 147 (technical)**  30 (biological)
+   Number of uniquely aligned reads    ExpressionSet
+2                     2,197,622,796             link
+3                       834,584,950             link
+4                         8,670,342             link
+5                        41,356,738             link
+6                        71,970,164  original pooled
+7                      *886,468,054             link
+8                      *886,468,054             link
+9                         6,573,643             link
+10                      223,929,919             link
+11                       14,368,471             link
+12                       61,732,881             link
+13                      111,376,152             link
+14                       27,883,862             link
+15                      343,445,340             link
+16                        7,688,602             link
+17                      158,178,477             link
+18                    1,451,119,823             link
+19                    2,278,788,557 original  pooled
+        Count table Phenotype table
+2              link            link
+3              link            link
+4              link            link
+5              link            link
+6   original pooled original pooled
+7              link            link
+8              link            link
+9              link            link
+10             link            link
+11             link            link
+12             link            link
+13             link            link
+14             link            link
+15             link            link
+16             link            link
+17             link            link
+18             link            link
+19 original  pooled original pooled
+                                             Notes
+2  Illumina Human BodyMap 2.0 -- tissue comparison
+3                                     HapMap - CEU
+4                                 lung fibroblasts
+5                         liver; males and femlaes
+6                               experiment: MAQC-2
+7                                     HapMap - CEU
+8                                     HapMap - YRI
+9                             cell type comparison
+10                               tissue comparison
+11         control vs. CUG-BP1 knockdown myoblasts
+12                               tissue comparison
+13                                     time course
+14             hybrid cell line, X always inactive
+15                          2 inbred mouse strains
+16                    priming technique comparison
+17       experimental vs. control at 2 time points
+18                       developmental time course
+19                       developmental time course</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 </div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiU0lTQklEIGRheSAyIGNvZGUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCkluc3RhbGxpbmcgZ29vZ2xlIHNoZWV0cwpgYGB7cn0KbGlicmFyeShkZXZ0b29scykKaW5zdGFsbF9naXRodWIoImplbm55YmMvZ29vZ2xlc2hlZXRzIikKbGlicmFyeShnb29nbGVzaGVldHMpCmBgYAoKUmVhZGluZyBhIGdvb2dsZSBzaGVldAoKYGBge3J9CnNoZWV0c191cmwgPSAiaHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vc3ByZWFkc2hlZXRzL2QvMThLUVFkNExZNWs4VWN1eDFNdldDc1FHUUpsdmQwRUNUbm4tM2l4ZE9LRk0vcHViaHRtbCIKZ3N1cmwxID0gZ3NfdXJsKHNoZWV0c191cmwpCmRhdCA9IGdzX3JlYWQoZ3N1cmwxKQpkYXRlX2FjY2Vzc2VkID0gZGF0ZSgpCmRhdGVfYWNjZXNzZWQKYGBgCgoKTG9vayBhdCB0aGUgcmVzdWx0CgpgYGB7ciBsb29rYXRyZXN1bHR9CmRhdApgYGAKCgpEb2luZyB0aGUgbGFiCgpgYGB7cn0KYWJvdXR1cyA9ICJodHRwczovL2RvY3MuZ29vZ2xlLmNvbS9zcHJlYWRzaGVldHMvZC8xMDN2VW9mdHYyZExOWl9GY0F6MDhiNXB0SWtXTjRXMlJhRm43VkYzOUZKOC9lZGl0I2dpZD0wIgpnc3VybF9hYm91dCA9IGdzX3VybChhYm91dHVzKQpkYXQgPSBnc19yZWFkKGdzdXJsX2Fib3V0KQpkYXRlX2FjY2Vzc2VkID0gZGF0ZSgpCmRhdGVfYWNjZXNzZWQKYGBgCgpSZWFkIGp1c3QgdGhlIGZpcnN0IHR3byBjb2x1bW5zCmBgYHtyfQoKZGF0MiA9IGdzX3JlYWQoZ3N1cmxfYWJvdXQscmFuZ2U9Y2VsbF9jb2xzKDE6MikpCmRhdDIKYGBgCgpGaW5kIG91dCBob3cgbWFueSB5ZWFycyBvZiBSIGV4cGVyaWVuY2UKCmBgYHtyfQpkYXQgPSBnc19yZWFkKGdzdXJsX2Fib3V0KQpkYXQKbWVhbihhcy5udW1lcmljKGRhdCRgWWVhcnMgb2YgUiBleHBlcmllbmNlYCksbmEucm09VCkKbG9naWNhbF90d29feWVhcnMgPSBhcy5udW1lcmljKGRhdCRgWWVhcnMgb2YgUiBleHBlcmllbmNlYCkgPiAyCmxvZ2ljYWxfdHdvX3llYXJzCmBgYAoKCiMjIERvaW5nIEpTT04gc3R1ZmYgbm93CgpJbnN0YWxsIHN0dWZmCmBgYHtyfQojaW5zdGFsbC5wYWNrYWdlcygianNvbmxpdGUiKQpsaWJyYXJ5KGpzb25saXRlKQpgYGAKCgpSZWFkIGluIEpTT04gZGF0YQoKYGBge3J9CmdpdGh1Yl91cmwgPSAiaHR0cHM6Ly9hcGkuZ2l0aHViLmNvbS91c2Vycy9qdGxlZWsvcmVwb3MiCmpzb25EYXRhIDwtIGZyb21KU09OKGdpdGh1Yl91cmwpCmRpbShqc29uRGF0YSkKbmFtZXMoanNvbkRhdGEpCmpzb25EYXRhJG5hbWUKYGBgCgoKRXhwbG9yaW5nIHRoZSBkYXRhIGZyYW1lCgpgYGB7cn0KdGFibGUoc2FwcGx5KGpzb25EYXRhLGNsYXNzKSkKZGltKGpzb25EYXRhJG93bmVyKQpuYW1lcyhqc29uRGF0YSRvd25lcikKanNvbkRhdGEkb3duZXIkaHRtbF91cmwKYGBgCgo=</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiU0lTQklEIGRheSAyIGNvZGUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCkluc3RhbGxpbmcgZ29vZ2xlIHNoZWV0cwpgYGB7cn0KbGlicmFyeShkZXZ0b29scykKaW5zdGFsbF9naXRodWIoImplbm55YmMvZ29vZ2xlc2hlZXRzIikKbGlicmFyeShnb29nbGVzaGVldHMpCmBgYAoKUmVhZGluZyBhIGdvb2dsZSBzaGVldAoKYGBge3J9CnNoZWV0c191cmwgPSAiaHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vc3ByZWFkc2hlZXRzL2QvMThLUVFkNExZNWs4VWN1eDFNdldDc1FHUUpsdmQwRUNUbm4tM2l4ZE9LRk0vcHViaHRtbCIKZ3N1cmwxID0gZ3NfdXJsKHNoZWV0c191cmwpCmRhdCA9IGdzX3JlYWQoZ3N1cmwxKQpkYXRlX2FjY2Vzc2VkID0gZGF0ZSgpCmRhdGVfYWNjZXNzZWQKYGBgCgoKTG9vayBhdCB0aGUgcmVzdWx0CgpgYGB7ciBsb29rYXRyZXN1bHR9CmRhdApgYGAKCgpEb2luZyB0aGUgbGFiCgpgYGB7cn0KYWJvdXR1cyA9ICJodHRwczovL2RvY3MuZ29vZ2xlLmNvbS9zcHJlYWRzaGVldHMvZC8xMDN2VW9mdHYyZExOWl9GY0F6MDhiNXB0SWtXTjRXMlJhRm43VkYzOUZKOC9lZGl0I2dpZD0wIgpnc3VybF9hYm91dCA9IGdzX3VybChhYm91dHVzKQpkYXQgPSBnc19yZWFkKGdzdXJsX2Fib3V0KQpkYXRlX2FjY2Vzc2VkID0gZGF0ZSgpCmRhdGVfYWNjZXNzZWQKYGBgCgpSZWFkIGp1c3QgdGhlIGZpcnN0IHR3byBjb2x1bW5zCmBgYHtyfQoKZGF0MiA9IGdzX3JlYWQoZ3N1cmxfYWJvdXQscmFuZ2U9Y2VsbF9jb2xzKDE6MikpCmRhdDIKYGBgCgpGaW5kIG91dCBob3cgbWFueSB5ZWFycyBvZiBSIGV4cGVyaWVuY2UKCmBgYHtyfQpkYXQgPSBnc19yZWFkKGdzdXJsX2Fib3V0KQpkYXQKbWVhbihhcy5udW1lcmljKGRhdCRgWWVhcnMgb2YgUiBleHBlcmllbmNlYCksbmEucm09VCkKbG9naWNhbF90d29feWVhcnMgPSBhcy5udW1lcmljKGRhdCRgWWVhcnMgb2YgUiBleHBlcmllbmNlYCkgPiAyCmxvZ2ljYWxfdHdvX3llYXJzCmBgYAoKCiMjIERvaW5nIEpTT04gc3R1ZmYgbm93CgpJbnN0YWxsIHN0dWZmCmBgYHtyfQojaW5zdGFsbC5wYWNrYWdlcygianNvbmxpdGUiKQpsaWJyYXJ5KGpzb25saXRlKQpgYGAKCgpSZWFkIGluIEpTT04gZGF0YQoKYGBge3J9CmdpdGh1Yl91cmwgPSAiaHR0cHM6Ly9hcGkuZ2l0aHViLmNvbS91c2Vycy9qdGxlZWsvcmVwb3MiCmpzb25EYXRhIDwtIGZyb21KU09OKGdpdGh1Yl91cmwpCmRpbShqc29uRGF0YSkKbmFtZXMoanNvbkRhdGEpCmpzb25EYXRhJG5hbWUKYGBgCgoKRXhwbG9yaW5nIHRoZSBkYXRhIGZyYW1lCgpgYGB7cn0KdGFibGUoc2FwcGx5KGpzb25EYXRhLGNsYXNzKSkKZGltKGpzb25EYXRhJG93bmVyKQpuYW1lcyhqc29uRGF0YSRvd25lcikKanNvbkRhdGEkb3duZXIkaHRtbF91cmwKYGBgCgpEbyB0aGUgbGFiIHJlYWxseSBxdWljawoKYGBge3J9CmdpdGh1Yl91cmwgPSAiaHR0cHM6Ly9hcGkuZ2l0aHViLmNvbS91c2Vycy9oYWRsZXkvcmVwb3MiCmpzb25EYXRhIDwtIGZyb21KU09OKGdpdGh1Yl91cmwpCmBgYAoKCkxvb2sgYXQgdGhlIG5hbWVzIG9mIHRoZSB2YXJpYWJsZXMKCmBgYHtyfQpuYW1lcyhqc29uRGF0YSkKanNvbkRhdGEkc3RhcmdhemVyc19jb3VudApqc29uRGF0YSRvcGVuX2lzc3VlcwpgYGAKU2FmYXJpIC0+IHByZWZlcmVuY2VzIC0+IGFkdmFuY2VkIC0+IGNoZWNrYm94ICJzaG93IGRldmVsb3BtZW50IG1lbnUgaW4gbWVudSBiYXIiCkJ1dHRvbiBvbiB0b3Agd2hlcmUgeW91IGNhbiBjbGljayAiZGV2ZWxvcGVyIG1lbnUiCgpgYGB7cn0KaW5zdGFsbC5wYWNrYWdlcygicnZlc3QiKQpsaWJyYXJ5KHJ2ZXN0KQpgYGAKCgpgYGB7cn0KcmVjb3VudF91cmwgPSAiaHR0cDovL2Jvd3RpZS1iaW8uc291cmNlZm9yZ2UubmV0L3JlY291bnQvIgpodG1sZmlsZSA9IHJlYWRfaHRtbChyZWNvdW50X3VybCkKaHRtbGZpbGUKYGBgCgoKYGBge3J9Cm5kcyA9IGh0bWxfbm9kZXMoaHRtbGZpbGUsICAgICAgICAgICAgICAgIAp4cGF0aD0nLy8qW0BpZD0icmVjb3VudHRhYiJdL3RhYmxlJykKbmRzCmBgYAoKYGBge3J9CmRhdCA9IGh0bWxfdGFibGUobmRzKQpkYXQgPSBhcy5kYXRhLmZyYW1lKGRhdCkKaGVhZChkYXQpCm5hbWVzKGRhdCkgPSBkYXRbMSxdCmRhdFstMSxdCmBgYAoK</div>
 
 
 
