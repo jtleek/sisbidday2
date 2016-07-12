@@ -130,3 +130,117 @@ names(dat) = dat[1,]
 dat[-1,]
 ```
 
+
+## APIs
+
+
+Load the figshare package
+```{r}
+install.packages("rfigshare")
+library(rfigshare)
+```
+
+
+Let's search for Jeff
+
+```{r}
+leeksearch = fs_search("Leek")
+length(leeksearch)
+leeksearch[[1]]
+```
+
+Install httr
+
+```{r}
+install.packages("httr")
+library(httr)
+```
+
+
+GET data set
+
+```{r}
+query_url = "https://api.github.com/search/repositories?q=created:2014-08-13+language:r+-user:cran"
+req = GET(query_url)
+```
+
+
+## Do the web scraping lab
+
+Get the html file
+```{r}
+bioc_url = "https://raw.githubusercontent.com/SISBID/Module1/gh-pages/labs/bioc-software.html"
+htmlfile = read_html(bioc_url)
+htmlfile
+```
+
+Subset out the table
+```{r}
+nds = html_nodes(htmlfile,                
+xpath='//*[@id="biocViews_package_table"]')
+nds
+```
+
+Turn into a data frame
+
+```{r}
+dat = html_table(nds)
+dat = as.data.frame(dat)
+head(dat)
+```
+
+
+Get the text
+
+```{r}
+text = paste(dat[,3], collapse=" ")
+text
+```
+
+Install wordcloud
+
+```{r}
+install.packages(c("wordcloud","tm"))
+library(wordcloud)
+```
+
+
+Make the wordcloud
+
+```{r}
+wordcloud(text,max.words=50)
+```
+
+
+
+Do the api part
+
+```{r}
+oct4_dat = fromJSON("http://rest.ensembl.org//lookup/id/ENSG00000204531?content-type=application/json;expand=1")
+str(oct4_dat)
+```
+
+Do the transcript part
+
+```{r}
+oct4_dat$Transcript
+```
+
+Change genes
+```{r}
+newgene_dat = fromJSON("http://rest.ensembl.org//lookup/id/ENSG00000141510?content-type=application/json;expand=1")
+str(newgene_dat)
+```
+
+Get the gene info at http://rest.ensembl.org/documentation/info/symbol_lookup.
+
+Here is the example `/lookup/symbol/homo_sapiens/BRCA2?content-type=application/json;expand=1` and modify it with our gene like so: `/lookup/symbol/homo_sapiens/BRAF?content-type=application/json;expand=1`
+We'd crete the url using the base url like this: `http://rest.ensembl.org//lookup/symbol/homo_sapiens/BRAF?content-type=application/json;expand=1`
+We'd request the information with fromJSON
+
+```{r}
+braf_info = fromJSON("http://rest.ensembl.org//lookup/symbol/homo_sapiens/BRAF?content-type=application/json;expand=1")
+braf_info$id
+```
+
+
