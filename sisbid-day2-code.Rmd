@@ -27,3 +27,61 @@ Look at the result
 dat
 ```
 
+
+Doing the lab
+
+```{r}
+aboutus = "https://docs.google.com/spreadsheets/d/103vUoftv2dLNZ_FcAz08b5ptIkWN4W2RaFn7VF39FJ8/edit#gid=0"
+gsurl_about = gs_url(aboutus)
+dat = gs_read(gsurl_about)
+date_accessed = date()
+date_accessed
+```
+
+Read just the first two columns
+```{r}
+
+dat2 = gs_read(gsurl_about,range=cell_cols(1:2))
+dat2
+```
+
+Find out how many years of R experience
+
+```{r}
+dat = gs_read(gsurl_about)
+dat
+mean(as.numeric(dat$`Years of R experience`),na.rm=T)
+logical_two_years = as.numeric(dat$`Years of R experience`) > 2
+logical_two_years
+```
+
+
+## Doing JSON stuff now
+
+Install stuff
+```{r}
+#install.packages("jsonlite")
+library(jsonlite)
+```
+
+
+Read in JSON data
+
+```{r}
+github_url = "https://api.github.com/users/jtleek/repos"
+jsonData <- fromJSON(github_url)
+dim(jsonData)
+names(jsonData)
+jsonData$name
+```
+
+
+Exploring the data frame
+
+```{r}
+table(sapply(jsonData,class))
+dim(jsonData$owner)
+names(jsonData$owner)
+jsonData$owner$html_url
+```
+

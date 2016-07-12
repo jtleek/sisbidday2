@@ -246,32 +246,447 @@ date_accessed</code></pre>
 <!-- rnb-source-begin -->
 <pre class="r"><code>dat</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiIyBBIHRpYmJsZTogNjkgeCAxM1xuICAgICBHaXQgR2l0aHViICAgICBSIFJzdHVkaW9cbiAgIDxpbnQ+ICA8aW50PiA8aW50PiAgIDxpbnQ+XG4xICAgICAgMCAgICAgIDAgICAgIDMgICAgICAgMFxuMiAgICAgIDAgICAgICAxICAgICAxICAgICAgIDFcbjMgICAgICAyICAgICAgMSAgICAgNCAgICAgICA0XG40ICAgICAgMSAgICAgIDIgICAgIDUgICAgICAgNlxuNSAgICAgIDEgICAgICAxICAgICA3ICAgICAgIDdcbjYgICAgICAxICAgICAgMSAgICAgMiAgICAgICAyXG43ICAgICAgMCAgICAgIDAgICAgIDUgICAgICAgNVxuOCAgICAgIDEgICAgICAxICAgICA4ICAgICAgIDZcbjkgICAgICA2ICAgICAgNiAgICAgOCAgICAgICA0XG4xMCAgICAgMiAgICAgIDIgICAgIDMgICAgICAgM1xuIyAuLi4gd2l0aCA1OSBtb3JlIHJvd3MsIGFuZCA5IG1vcmUgdmFyaWFibGVzOlxuIyAgIFJlcHJvZHVjaWJsZSBSZXNlYXJjaCA8aW50PiwgUiBtYXJrZG93biA8aW50PixcbiMgICBEYXRhIGltcG9ydCA8aW50PiwgV2ViIHNjcmFwaW5nIDxpbnQ+LCBEYXRhXG4jICAgY2xlYW5pbmcgPGludD4sIGRwbHlyIDxpbnQ+LFxuIyAgIEJpb2NvbmR1Y3RvciA8aW50PiwgUmVndWxhciBleHByZXNzaW9ucyA8aW50PixcbiMgICBYMTMgPGludD5cbiJ9 -->
-<pre><code># A tibble: 69 x 13
-     Git Github     R Rstudio
-   &lt;int&gt;  &lt;int&gt; &lt;int&gt;   &lt;int&gt;
-1      0      0     3       0
-2      0      1     1       1
-3      2      1     4       4
-4      1      2     5       6
-5      1      1     7       7
-6      1      1     2       2
-7      0      0     5       5
-8      1      1     8       6
-9      6      6     8       4
-10     2      2     3       3
-# ... with 59 more rows, and 9 more variables:
-#   Reproducible Research &lt;int&gt;, R markdown &lt;int&gt;,
-#   Data import &lt;int&gt;, Web scraping &lt;int&gt;, Data
-#   cleaning &lt;int&gt;, dplyr &lt;int&gt;,
-#   Bioconductor &lt;int&gt;, Regular expressions &lt;int&gt;,
-#   X13 &lt;int&gt;</code></pre>
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Doing the lab</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>aboutus = &quot;https://docs.google.com/spreadsheets/d/103vUoftv2dLNZ_FcAz08b5ptIkWN4W2RaFn7VF39FJ8/edit#gid=0&quot;
+gsurl_about = gs_url(aboutus)
+dat = gs_read(gsurl_about)
+date_accessed = date()
+date_accessed</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Read just the first two columns</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>dat2 = gs_read(gsurl_about,range=cell_cols(1:2))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiQWNjZXNzaW5nIHdvcmtzaGVldCB0aXRsZWQgJ1NoZWV0MScuXG4ifQ== -->
+<pre><code>Accessing worksheet titled 'Sheet1'.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5Eb3dubG9hZGluZzogNzIwIEIgICAgIFxuRG93bmxvYWRpbmc6IDcyMCBCICAgICBcbkRvd25sb2FkaW5nOiAyLjEga0IgICAgIFxuRG93bmxvYWRpbmc6IDIuMSBrQiAgICAgXG5Eb3dubG9hZGluZzogMy4xIGtCICAgICBcbkRvd25sb2FkaW5nOiAzLjEga0IgICAgIFxuRG93bmxvYWRpbmc6IDQuNSBrQiAgICAgXG5Eb3dubG9hZGluZzogNC41IGtCICAgICBcbkRvd25sb2FkaW5nOiA1Ljgga0IgICAgIFxuRG93bmxvYWRpbmc6IDUuOCBrQiAgICAgXG5Eb3dubG9hZGluZzogNy4xIGtCICAgICBcbkRvd25sb2FkaW5nOiA3LjEga0IgICAgIFxuRG93bmxvYWRpbmc6IDguNSBrQiAgICAgXG5Eb3dubG9hZGluZzogOC41IGtCICAgICBcbkRvd25sb2FkaW5nOiA5Ljgga0IgICAgIFxuRG93bmxvYWRpbmc6IDkuOCBrQiAgICAgXG5Eb3dubG9hZGluZzogMTEga0IgICAgIFxuRG93bmxvYWRpbmc6IDExIGtCICAgICBcbkRvd25sb2FkaW5nOiAxMyBrQiAgICAgXG5Eb3dubG9hZGluZzogMTMga0IgICAgIFxuRG93bmxvYWRpbmc6IDE0IGtCICAgICBcbkRvd25sb2FkaW5nOiAxNCBrQiAgICAgXG5Eb3dubG9hZGluZzogMTUga0IgICAgIFxuRG93bmxvYWRpbmc6IDE1IGtCICAgICBcbkRvd25sb2FkaW5nOiAxNSBrQiAgICAgXG5Eb3dubG9hZGluZzogMTUga0IgICAgIFxuRG93bmxvYWRpbmc6IDE3IGtCICAgICBcbkRvd25sb2FkaW5nOiAxNyBrQiAgICAgXG5Eb3dubG9hZGluZzogMTgga0IgICAgIFxuRG93bmxvYWRpbmc6IDE4IGtCICAgICBcbkRvd25sb2FkaW5nOiAxOSBrQiAgICAgXG5Eb3dubG9hZGluZzogMTkga0IgICAgIFxuRG93bmxvYWRpbmc6IDE5IGtCICAgICBcbkRvd25sb2FkaW5nOiAxOSBrQiAgICAgXG5Eb3dubG9hZGluZzogMjEga0IgICAgIFxuRG93bmxvYWRpbmc6IDIxIGtCICAgICBcbkRvd25sb2FkaW5nOiAyMiBrQiAgICAgXG5Eb3dubG9hZGluZzogMjIga0IgICAgIFxuRG93bmxvYWRpbmc6IDI0IGtCICAgICBcbkRvd25sb2FkaW5nOiAyNCBrQiAgICAgXG5Eb3dubG9hZGluZzogMjQga0IgICAgIFxuRG93bmxvYWRpbmc6IDI0IGtCICAgICBcbkRvd25sb2FkaW5nOiAyNSBrQiAgICAgXG5Eb3dubG9hZGluZzogMjUga0IgICAgIFxuRG93bmxvYWRpbmc6IDI2IGtCICAgICBcbkRvd25sb2FkaW5nOiAyNiBrQiAgICAgXG5Eb3dubG9hZGluZzogMjgga0IgICAgIFxuRG93bmxvYWRpbmc6IDI4IGtCICAgICBcbkRvd25sb2FkaW5nOiAyOCBrQiAgICAgXG5Eb3dubG9hZGluZzogMjgga0IgICAgIFxuRG93bmxvYWRpbmc6IDI5IGtCICAgICBcbkRvd25sb2FkaW5nOiAyOSBrQiAgICAgXG5Eb3dubG9hZGluZzogMzAga0IgICAgIFxuRG93bmxvYWRpbmc6IDMwIGtCICAgICBcbkRvd25sb2FkaW5nOiAzMSBrQiAgICAgXG5Eb3dubG9hZGluZzogMzEga0IgICAgIFxuRG93bmxvYWRpbmc6IDMzIGtCICAgICBcbkRvd25sb2FkaW5nOiAzMyBrQiAgICAgXG5Eb3dubG9hZGluZzogMzMga0IgICAgIFxuRG93bmxvYWRpbmc6IDMzIGtCICAgICBcbkRvd25sb2FkaW5nOiAzNCBrQiAgICAgXG5Eb3dubG9hZGluZzogMzQga0IgICAgIFxuRG93bmxvYWRpbmc6IDM1IGtCICAgICBcbkRvd25sb2FkaW5nOiAzNSBrQiAgICAgXG5Eb3dubG9hZGluZzogMzcga0IgICAgIFxuRG93bmxvYWRpbmc6IDM3IGtCICAgICBcbkRvd25sb2FkaW5nOiAzNyBrQiAgICAgXG5Eb3dubG9hZGluZzogMzcga0IgICAgIFxuRG93bmxvYWRpbmc6IDM4IGtCICAgICBcbkRvd25sb2FkaW5nOiAzOCBrQiAgICAgXG5Eb3dubG9hZGluZzogNDAga0IgICAgIFxuRG93bmxvYWRpbmc6IDQwIGtCICAgICBcbkRvd25sb2FkaW5nOiA0MSBrQiAgICAgXG5Eb3dubG9hZGluZzogNDEga0IgICAgIFxuRG93bmxvYWRpbmc6IDQyIGtCICAgICBcbkRvd25sb2FkaW5nOiA0MiBrQiAgICAgXG5Eb3dubG9hZGluZzogNDQga0IgICAgIFxuRG93bmxvYWRpbmc6IDQ0IGtCICAgICBcbkRvd25sb2FkaW5nOiA0NSBrQiAgICAgXG5Eb3dubG9hZGluZzogNDUga0IgICAgIFxuRG93bmxvYWRpbmc6IDQ1IGtCICAgICBcbkRvd25sb2FkaW5nOiA0NSBrQiAgICAgXG5Eb3dubG9hZGluZzogNDUga0IgICAgIFxuRG93bmxvYWRpbmc6IDQ1IGtCICAgICBcbkRvd25sb2FkaW5nOiA0NiBrQiAgICAgXG5Eb3dubG9hZGluZzogNDYga0IgICAgIFxuRG93bmxvYWRpbmc6IDQ4IGtCICAgICBcbkRvd25sb2FkaW5nOiA0OCBrQiAgICAgXG5Eb3dubG9hZGluZzogNDkga0IgICAgIFxuRG93bmxvYWRpbmc6IDQ5IGtCICAgICBcbkRvd25sb2FkaW5nOiA0OSBrQiAgICAgXG5Eb3dubG9hZGluZzogNDkga0IgICAgIFxuRG93bmxvYWRpbmc6IDUwIGtCICAgICBcbkRvd25sb2FkaW5nOiA1MCBrQiAgICAgXG5Eb3dubG9hZGluZzogNTIga0IgICAgIFxuRG93bmxvYWRpbmc6IDUyIGtCICAgICBcbkRvd25sb2FkaW5nOiA1MyBrQiAgICAgXG5Eb3dubG9hZGluZzogNTMga0IgICAgIFxuRG93bmxvYWRpbmc6IDUzIGtCICAgICBcbkRvd25sb2FkaW5nOiA1MyBrQiAgICAgXG5Eb3dubG9hZGluZzogNTUga0IgICAgIFxuRG93bmxvYWRpbmc6IDU1IGtCICAgICBcbkRvd25sb2FkaW5nOiA1NiBrQiAgICAgXG5Eb3dubG9hZGluZzogNTYga0IgICAgIFxuRG93bmxvYWRpbmc6IDU3IGtCICAgICBcbkRvd25sb2FkaW5nOiA1NyBrQiAgICAgXG5Eb3dubG9hZGluZzogNTcga0IgICAgIFxuRG93bmxvYWRpbmc6IDU3IGtCICAgICBcbkRvd25sb2FkaW5nOiA1OSBrQiAgICAgXG5Eb3dubG9hZGluZzogNTkga0IgICAgIFxuRG93bmxvYWRpbmc6IDYwIGtCICAgICBcbkRvd25sb2FkaW5nOiA2MCBrQiAgICAgXG5Eb3dubG9hZGluZzogNjEga0IgICAgIFxuRG93bmxvYWRpbmc6IDYxIGtCICAgICBcbkRvd25sb2FkaW5nOiA2MSBrQiAgICAgXG5Eb3dubG9hZGluZzogNjEga0IgICAgIFxuRG93bmxvYWRpbmc6IDYxIGtCICAgICBcbkRvd25sb2FkaW5nOiA2MSBrQiAgICAgXG5Eb3dubG9hZGluZzogNjMga0IgICAgIFxuRG93bmxvYWRpbmc6IDYzIGtCICAgICBcbkRvd25sb2FkaW5nOiA2NCBrQiAgICAgXG5Eb3dubG9hZGluZzogNjQga0IgICAgIFxuRG93bmxvYWRpbmc6IDY0IGtCICAgICBcbkRvd25sb2FkaW5nOiA2NCBrQiAgICAgXG5Eb3dubG9hZGluZzogNjYga0IgICAgIFxuRG93bmxvYWRpbmc6IDY2IGtCICAgICBcbkRvd25sb2FkaW5nOiA2NyBrQiAgICAgXG5Eb3dubG9hZGluZzogNjcga0IgICAgIFxuRG93bmxvYWRpbmc6IDY5IGtCICAgICBcbkRvd25sb2FkaW5nOiA2OSBrQiAgICAgXG5Eb3dubG9hZGluZzogNjkga0IgICAgIFxuRG93bmxvYWRpbmc6IDY5IGtCICAgICBcbkRvd25sb2FkaW5nOiA3MCBrQiAgICAgXG5Eb3dubG9hZGluZzogNzAga0IgICAgIFxuRG93bmxvYWRpbmc6IDcxIGtCICAgICBcbkRvd25sb2FkaW5nOiA3MSBrQiAgICAgXG5Eb3dubG9hZGluZzogNzMga0IgICAgIFxuRG93bmxvYWRpbmc6IDczIGtCICAgICBcbkRvd25sb2FkaW5nOiA3MyBrQiAgICAgXG5Eb3dubG9hZGluZzogNzMga0IgICAgIFxuRG93bmxvYWRpbmc6IDc0IGtCICAgICBcbkRvd25sb2FkaW5nOiA3NCBrQiAgICAgXG5Eb3dubG9hZGluZzogNzUga0IgICAgIFxuRG93bmxvYWRpbmc6IDc1IGtCICAgICBcbkRvd25sb2FkaW5nOiA3NyBrQiAgICAgXG5Eb3dubG9hZGluZzogNzcga0IgICAgIFxuRG93bmxvYWRpbmc6IDc3IGtCICAgICBcbkRvd25sb2FkaW5nOiA3NyBrQiAgICAgXG5Eb3dubG9hZGluZzogNzgga0IgICAgIFxuRG93bmxvYWRpbmc6IDc4IGtCICAgICBcbkRvd25sb2FkaW5nOiA3OSBrQiAgICAgXG5Eb3dubG9hZGluZzogNzkga0IgICAgIFxuRG93bmxvYWRpbmc6IDgxIGtCICAgICBcbkRvd25sb2FkaW5nOiA4MSBrQiAgICAgXG5Eb3dubG9hZGluZzogODIga0IgICAgIFxuRG93bmxvYWRpbmc6IDgyIGtCICAgICBcbkRvd25sb2FkaW5nOiA4MiBrQiAgICAgXG5Eb3dubG9hZGluZzogODIga0IgICAgIFxuRG93bmxvYWRpbmc6IDgzIGtCICAgICBcbkRvd25sb2FkaW5nOiA4MyBrQiAgICAgXG5Eb3dubG9hZGluZzogODUga0IgICAgIFxuRG93bmxvYWRpbmc6IDg1IGtCICAgICBcbkRvd25sb2FkaW5nOiA4NiBrQiAgICAgXG5Eb3dubG9hZGluZzogODYga0IgICAgIFxuRG93bmxvYWRpbmc6IDg2IGtCICAgICBcbkRvd25sb2FkaW5nOiA4NiBrQiAgICAgXG5Eb3dubG9hZGluZzogODcga0IgICAgIFxuRG93bmxvYWRpbmc6IDg3IGtCICAgICBcbkRvd25sb2FkaW5nOiA4OSBrQiAgICAgXG5Eb3dubG9hZGluZzogODkga0IgICAgIFxuRG93bmxvYWRpbmc6IDkwIGtCICAgICBcbkRvd25sb2FkaW5nOiA5MCBrQiAgICAgXG5Eb3dubG9hZGluZzogOTAga0IgICAgIFxuRG93bmxvYWRpbmc6IDkwIGtCICAgICBcbkRvd25sb2FkaW5nOiA5MSBrQiAgICAgXG5Eb3dubG9hZGluZzogOTEga0IgICAgIFxuRG93bmxvYWRpbmc6IDkzIGtCICAgICBcbkRvd25sb2FkaW5nOiA5MyBrQiAgICAgXG5Eb3dubG9hZGluZzogOTQga0IgICAgIFxuRG93bmxvYWRpbmc6IDk0IGtCICAgICBcbkRvd25sb2FkaW5nOiA5NCBrQiAgICAgXG5Eb3dubG9hZGluZzogOTQga0IgICAgIFxuRG93bmxvYWRpbmc6IDk2IGtCICAgICBcbkRvd25sb2FkaW5nOiA5NiBrQiAgICAgXG5Eb3dubG9hZGluZzogOTcga0IgICAgIFxuRG93bmxvYWRpbmc6IDk3IGtCICAgICBcbkRvd25sb2FkaW5nOiA5OCBrQiAgICAgXG5Eb3dubG9hZGluZzogOTgga0IgICAgIFxuRG93bmxvYWRpbmc6IDk4IGtCICAgICBcbkRvd25sb2FkaW5nOiA5OCBrQiAgICAgXG5Eb3dubG9hZGluZzogOTkga0IgICAgIFxuRG93bmxvYWRpbmc6IDk5IGtCICAgICBcbkRvd25sb2FkaW5nOiA5OSBrQiAgICAgXG5Eb3dubG9hZGluZzogOTkga0IgICAgIFxuIn0= -->
+<pre><code>
+Downloading: 720 B     
+Downloading: 720 B     
+Downloading: 2.1 kB     
+Downloading: 2.1 kB     
+Downloading: 3.1 kB     
+Downloading: 3.1 kB     
+Downloading: 4.5 kB     
+Downloading: 4.5 kB     
+Downloading: 5.8 kB     
+Downloading: 5.8 kB     
+Downloading: 7.1 kB     
+Downloading: 7.1 kB     
+Downloading: 8.5 kB     
+Downloading: 8.5 kB     
+Downloading: 9.8 kB     
+Downloading: 9.8 kB     
+Downloading: 11 kB     
+Downloading: 11 kB     
+Downloading: 13 kB     
+Downloading: 13 kB     
+Downloading: 14 kB     
+Downloading: 14 kB     
+Downloading: 15 kB     
+Downloading: 15 kB     
+Downloading: 15 kB     
+Downloading: 15 kB     
+Downloading: 17 kB     
+Downloading: 17 kB     
+Downloading: 18 kB     
+Downloading: 18 kB     
+Downloading: 19 kB     
+Downloading: 19 kB     
+Downloading: 19 kB     
+Downloading: 19 kB     
+Downloading: 21 kB     
+Downloading: 21 kB     
+Downloading: 22 kB     
+Downloading: 22 kB     
+Downloading: 24 kB     
+Downloading: 24 kB     
+Downloading: 24 kB     
+Downloading: 24 kB     
+Downloading: 25 kB     
+Downloading: 25 kB     
+Downloading: 26 kB     
+Downloading: 26 kB     
+Downloading: 28 kB     
+Downloading: 28 kB     
+Downloading: 28 kB     
+Downloading: 28 kB     
+Downloading: 29 kB     
+Downloading: 29 kB     
+Downloading: 30 kB     
+Downloading: 30 kB     
+Downloading: 31 kB     
+Downloading: 31 kB     
+Downloading: 33 kB     
+Downloading: 33 kB     
+Downloading: 33 kB     
+Downloading: 33 kB     
+Downloading: 34 kB     
+Downloading: 34 kB     
+Downloading: 35 kB     
+Downloading: 35 kB     
+Downloading: 37 kB     
+Downloading: 37 kB     
+Downloading: 37 kB     
+Downloading: 37 kB     
+Downloading: 38 kB     
+Downloading: 38 kB     
+Downloading: 40 kB     
+Downloading: 40 kB     
+Downloading: 41 kB     
+Downloading: 41 kB     
+Downloading: 42 kB     
+Downloading: 42 kB     
+Downloading: 44 kB     
+Downloading: 44 kB     
+Downloading: 45 kB     
+Downloading: 45 kB     
+Downloading: 45 kB     
+Downloading: 45 kB     
+Downloading: 45 kB     
+Downloading: 45 kB     
+Downloading: 46 kB     
+Downloading: 46 kB     
+Downloading: 48 kB     
+Downloading: 48 kB     
+Downloading: 49 kB     
+Downloading: 49 kB     
+Downloading: 49 kB     
+Downloading: 49 kB     
+Downloading: 50 kB     
+Downloading: 50 kB     
+Downloading: 52 kB     
+Downloading: 52 kB     
+Downloading: 53 kB     
+Downloading: 53 kB     
+Downloading: 53 kB     
+Downloading: 53 kB     
+Downloading: 55 kB     
+Downloading: 55 kB     
+Downloading: 56 kB     
+Downloading: 56 kB     
+Downloading: 57 kB     
+Downloading: 57 kB     
+Downloading: 57 kB     
+Downloading: 57 kB     
+Downloading: 59 kB     
+Downloading: 59 kB     
+Downloading: 60 kB     
+Downloading: 60 kB     
+Downloading: 61 kB     
+Downloading: 61 kB     
+Downloading: 61 kB     
+Downloading: 61 kB     
+Downloading: 61 kB     
+Downloading: 61 kB     
+Downloading: 63 kB     
+Downloading: 63 kB     
+Downloading: 64 kB     
+Downloading: 64 kB     
+Downloading: 64 kB     
+Downloading: 64 kB     
+Downloading: 66 kB     
+Downloading: 66 kB     
+Downloading: 67 kB     
+Downloading: 67 kB     
+Downloading: 69 kB     
+Downloading: 69 kB     
+Downloading: 69 kB     
+Downloading: 69 kB     
+Downloading: 70 kB     
+Downloading: 70 kB     
+Downloading: 71 kB     
+Downloading: 71 kB     
+Downloading: 73 kB     
+Downloading: 73 kB     
+Downloading: 73 kB     
+Downloading: 73 kB     
+Downloading: 74 kB     
+Downloading: 74 kB     
+Downloading: 75 kB     
+Downloading: 75 kB     
+Downloading: 77 kB     
+Downloading: 77 kB     
+Downloading: 77 kB     
+Downloading: 77 kB     
+Downloading: 78 kB     
+Downloading: 78 kB     
+Downloading: 79 kB     
+Downloading: 79 kB     
+Downloading: 81 kB     
+Downloading: 81 kB     
+Downloading: 82 kB     
+Downloading: 82 kB     
+Downloading: 82 kB     
+Downloading: 82 kB     
+Downloading: 83 kB     
+Downloading: 83 kB     
+Downloading: 85 kB     
+Downloading: 85 kB     
+Downloading: 86 kB     
+Downloading: 86 kB     
+Downloading: 86 kB     
+Downloading: 86 kB     
+Downloading: 87 kB     
+Downloading: 87 kB     
+Downloading: 89 kB     
+Downloading: 89 kB     
+Downloading: 90 kB     
+Downloading: 90 kB     
+Downloading: 90 kB     
+Downloading: 90 kB     
+Downloading: 91 kB     
+Downloading: 91 kB     
+Downloading: 93 kB     
+Downloading: 93 kB     
+Downloading: 94 kB     
+Downloading: 94 kB     
+Downloading: 94 kB     
+Downloading: 94 kB     
+Downloading: 96 kB     
+Downloading: 96 kB     
+Downloading: 97 kB     
+Downloading: 97 kB     
+Downloading: 98 kB     
+Downloading: 98 kB     
+Downloading: 98 kB     
+Downloading: 98 kB     
+Downloading: 99 kB     
+Downloading: 99 kB     
+Downloading: 99 kB     
+Downloading: 99 kB     </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>dat2</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBBIHRpYmJsZTogNzIgeCAyXG4gICAgICBVVyBSIHVzZXIgKHllcyBvciBubylcbiAgIDxjaHI+ICAgICAgICAgICAgICA8Y2hyPlxuMSAgICB5ZXMgICAgICAgICAgICAgICAgeWVzXG4yICAgICBubyAgICAgICAgICAgICAgICBZZXNcbjMgICAgIE5PICAgICAgICAgICAgICAgIFllc1xuNCAgICAgTm8gICAgICAgICAgICAgICAgeWVzXG41ICAgIFllcyAgICAgICAgICAgICAgICBZRXNcbjYgICAgIE5vICAgICAgICAgICAgICAgIFllc1xuNyAgICAgTm8gICAgICAgICAgICAgICAgWWVzXG44ICAgICBObyAgICAgICAgICAgICAgICB5ZXNcbjkgICAgIE5PICAgICAgICAgICAgICAgIFlFU1xuMTAgICAgTm8gICAgICAgICAgICAgICAgeWVzXG4jIC4uLiB3aXRoIDYyIG1vcmUgcm93c1xuIn0= -->
+<pre><code># A tibble: 72 x 2
+      UW R user (yes or no)
+   &lt;chr&gt;              &lt;chr&gt;
+1    yes                yes
+2     no                Yes
+3     NO                Yes
+4     No                yes
+5    Yes                YEs
+6     No                Yes
+7     No                Yes
+8     No                yes
+9     NO                YES
+10    No                yes
+# ... with 62 more rows</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Find out how many years of R experience</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>dat = gs_read(gsurl_about)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiQWNjZXNzaW5nIHdvcmtzaGVldCB0aXRsZWQgJ1NoZWV0MScuXG4ifQ== -->
+<pre><code>Accessing worksheet titled 'Sheet1'.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5Eb3dubG9hZGluZzogMS4xIGtCICAgICBcbkRvd25sb2FkaW5nOiAxLjEga0IgICAgIFxuRG93bmxvYWRpbmc6IDEuNyBrQiAgICAgXG5Eb3dubG9hZGluZzogMS43IGtCICAgICBcbkRvd25sb2FkaW5nOiAxLjcga0IgICAgIFxuRG93bmxvYWRpbmc6IDEuNyBrQiAgICAgXG5Eb3dubG9hZGluZzogMS43IGtCICAgICBcbkRvd25sb2FkaW5nOiAxLjcga0IgICAgIFxuIn0= -->
+<pre><code>
+Downloading: 1.1 kB     
+Downloading: 1.1 kB     
+Downloading: 1.7 kB     
+Downloading: 1.7 kB     
+Downloading: 1.7 kB     
+Downloading: 1.7 kB     
+Downloading: 1.7 kB     
+Downloading: 1.7 kB     </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTm8gZW5jb2Rpbmcgc3VwcGxpZWQ6IGRlZmF1bHRpbmcgdG8gVVRGLTguXG4ifQ== -->
+<pre><code>No encoding supplied: defaulting to UTF-8.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>dat</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBBIHRpYmJsZTogNzIgeCA4XG4gICAgICBVVyBSIHVzZXIgKHllcyBvciBubykgWWVhcnMgb2YgUiBleHBlcmllbmNlIEdpdGh1YiBVc2VyXG4gICA8Y2hyPiAgICAgICAgICAgICAgPGNocj4gICAgICAgICAgICAgICAgIDxjaHI+ICAgICAgIDxjaHI+XG4xICAgIHllcyAgICAgICAgICAgICAgICB5ZXMgICAgICAgICAgICAgICAgICAgIDwxICAgICAgICAgIG5vXG4yICAgICBubyAgICAgICAgICAgICAgICBZZXMgICAgICAgICAgICAgICAgICAgIDwxICAgICAgICAgIG5vXG4zICAgICBOTyAgICAgICAgICAgICAgICBZZXMgICAgICAgICAgICAgICAgICAgIDwxICAgICAgICAgIG5vXG40ICAgICBObyAgICAgICAgICAgICAgICB5ZXMgICAgICAgICAgICAgICAgICAgICAxICAgICAgICAgIE5vXG41ICAgIFllcyAgICAgICAgICAgICAgICBZRXMgICAgICAgICAgICAgICAgICAgIDEwICAgICAgICAgIE5vXG42ICAgICBObyAgICAgICAgICAgICAgICBZZXMgICAgICAgICAgICAgICAgICAgICAxICAgICAgICAgIE5vXG43ICAgICBObyAgICAgICAgICAgICAgICBZZXMgICAgICAgICAgICAgICAgICAgICAzICAgICAgICAgIE5vXG44ICAgICBObyAgICAgICAgICAgICAgICB5ZXMgICAgICAgICAgICAgICAgICAgICA3ICAgICAgICAgIE5vXG45ICAgICBOTyAgICAgICAgICAgICAgICBZRVMgICAgICAgICAgICAgICAgICAgICAxICAgICAgICAgIE5vXG4xMCAgICBObyAgICAgICAgICAgICAgICB5ZXMgICAgICAgICAgICAgICAgICAgIDwxICAgICAgICAgeWVzXG4jIC4uLiB3aXRoIDYyIG1vcmUgcm93cywgYW5kIDQgbW9yZSB2YXJpYWJsZXM6IFllYXJzIG9mIEdpdGh1YlxuIyAgIEV4cGVyaWVuY2UgPGNocj4sIFdoeSBhcmUgeW91IHRha2luZyB0aGlzIG1vZHVsZSAoZnJlZVxuIyAgIHRleHQpIDxjaHI+LCBBZGRpdGlvbmFsIGNvbW1lbnRzIDxjaHI+LCBYOCA8aW50PlxuIn0= -->
+<pre><code># A tibble: 72 x 8
+      UW R user (yes or no) Years of R experience Github User
+   &lt;chr&gt;              &lt;chr&gt;                 &lt;chr&gt;       &lt;chr&gt;
+1    yes                yes                    &lt;1          no
+2     no                Yes                    &lt;1          no
+3     NO                Yes                    &lt;1          no
+4     No                yes                     1          No
+5    Yes                YEs                    10          No
+6     No                Yes                     1          No
+7     No                Yes                     3          No
+8     No                yes                     7          No
+9     NO                YES                     1          No
+10    No                yes                    &lt;1         yes
+# ... with 62 more rows, and 4 more variables: Years of Github
+#   Experience &lt;chr&gt;, Why are you taking this module (free
+#   text) &lt;chr&gt;, Additional comments &lt;chr&gt;, X8 &lt;int&gt;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>mean(as.numeric(dat$`Years of R experience`),na.rm=T)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZyBpbiBtZWFuKGFzLm51bWVyaWMoZGF0JGBZZWFycyBvZiBSIGV4cGVyaWVuY2VgKSwgbmEucm0gPSBUKSA6XG4gIE5BcyBpbnRyb2R1Y2VkIGJ5IGNvZXJjaW9uXG4ifQ== -->
+<pre><code>Warning in mean(as.numeric(dat$`Years of R experience`), na.rm = T) :
+  NAs introduced by coercion</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDMuNzVcbiJ9 -->
+<pre><code>[1] 3.75</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>logical_two_years = as.numeric(dat$`Years of R experience`) &gt; 2</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiV2FybmluZzogTkFzIGludHJvZHVjZWQgYnkgY29lcmNpb25cbiJ9 -->
+<pre><code>Warning: NAs introduced by coercion</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>logical_two_years</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSAgICBOQSAgICBOQSAgICBOQSBGQUxTRSAgVFJVRSBGQUxTRSAgVFJVRSAgVFJVRSBGQUxTRSAgICBOQSAgICBOQVxuWzEyXSBGQUxTRSAgICBOQSAgICBOQSAgVFJVRSBGQUxTRSAgICBOQSAgICBOQSAgICBOQSBGQUxTRSAgICBOQSAgVFJVRVxuWzIzXSAgVFJVRSAgICBOQSAgICBOQSAgICBOQSAgICBOQSAgICBOQSAgVFJVRSAgICBOQSBGQUxTRSAgICBOQSBGQUxTRVxuWzM0XSAgVFJVRSAgICBOQSBGQUxTRSAgICBOQSAgICBOQSAgVFJVRSBGQUxTRSAgICBOQSAgICBOQSAgICBOQSAgICBOQVxuWzQ1XSAgVFJVRSBGQUxTRSAgVFJVRSAgVFJVRSAgVFJVRSBGQUxTRSAgICBOQSAgVFJVRSAgICBOQSAgVFJVRSAgVFJVRVxuWzU2XSBGQUxTRSBGQUxTRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRSBGQUxTRSAgVFJVRSBGQUxTRSAgVFJVRSAgICBOQVxuWzY3XSAgICBOQSAgICBOQSAgICBOQSBGQUxTRSAgICBOQSAgVFJVRVxuIn0= -->
+<pre><code> [1]    NA    NA    NA FALSE  TRUE FALSE  TRUE  TRUE FALSE    NA    NA
+[12] FALSE    NA    NA  TRUE FALSE    NA    NA    NA FALSE    NA  TRUE
+[23]  TRUE    NA    NA    NA    NA    NA  TRUE    NA FALSE    NA FALSE
+[34]  TRUE    NA FALSE    NA    NA  TRUE FALSE    NA    NA    NA    NA
+[45]  TRUE FALSE  TRUE  TRUE  TRUE FALSE    NA  TRUE    NA  TRUE  TRUE
+[56] FALSE FALSE FALSE FALSE  TRUE FALSE FALSE  TRUE FALSE  TRUE    NA
+[67]    NA    NA    NA FALSE    NA  TRUE</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<div id="doing-json-stuff-now" class="section level2">
+<h2>Doing JSON stuff now</h2>
+<p>Install stuff</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>#install.packages(&quot;jsonlite&quot;)
+library(jsonlite)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Read in JSON data</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>github_url = &quot;https://api.github.com/users/jtleek/repos&quot;
+jsonData &lt;- fromJSON(github_url)
+dim(jsonData)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDMwIDY4XG4ifQ== -->
+<pre><code>[1] 30 68</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>names(jsonData)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcImlkXCIgICAgICAgICAgICAgICAgXCJuYW1lXCIgICAgICAgICAgICAgIFwiZnVsbF9uYW1lXCIgICAgICAgIFxuIFs0XSBcIm93bmVyXCIgICAgICAgICAgICAgXCJwcml2YXRlXCIgICAgICAgICAgIFwiaHRtbF91cmxcIiAgICAgICAgIFxuIFs3XSBcImRlc2NyaXB0aW9uXCIgICAgICAgXCJmb3JrXCIgICAgICAgICAgICAgIFwidXJsXCIgICAgICAgICAgICAgIFxuWzEwXSBcImZvcmtzX3VybFwiICAgICAgICAgXCJrZXlzX3VybFwiICAgICAgICAgIFwiY29sbGFib3JhdG9yc191cmxcIlxuWzEzXSBcInRlYW1zX3VybFwiICAgICAgICAgXCJob29rc191cmxcIiAgICAgICAgIFwiaXNzdWVfZXZlbnRzX3VybFwiIFxuWzE2XSBcImV2ZW50c191cmxcIiAgICAgICAgXCJhc3NpZ25lZXNfdXJsXCIgICAgIFwiYnJhbmNoZXNfdXJsXCIgICAgIFxuWzE5XSBcInRhZ3NfdXJsXCIgICAgICAgICAgXCJibG9ic191cmxcIiAgICAgICAgIFwiZ2l0X3RhZ3NfdXJsXCIgICAgIFxuWzIyXSBcImdpdF9yZWZzX3VybFwiICAgICAgXCJ0cmVlc191cmxcIiAgICAgICAgIFwic3RhdHVzZXNfdXJsXCIgICAgIFxuWzI1XSBcImxhbmd1YWdlc191cmxcIiAgICAgXCJzdGFyZ2F6ZXJzX3VybFwiICAgIFwiY29udHJpYnV0b3JzX3VybFwiIFxuWzI4XSBcInN1YnNjcmliZXJzX3VybFwiICAgXCJzdWJzY3JpcHRpb25fdXJsXCIgIFwiY29tbWl0c191cmxcIiAgICAgIFxuWzMxXSBcImdpdF9jb21taXRzX3VybFwiICAgXCJjb21tZW50c191cmxcIiAgICAgIFwiaXNzdWVfY29tbWVudF91cmxcIlxuWzM0XSBcImNvbnRlbnRzX3VybFwiICAgICAgXCJjb21wYXJlX3VybFwiICAgICAgIFwibWVyZ2VzX3VybFwiICAgICAgIFxuWzM3XSBcImFyY2hpdmVfdXJsXCIgICAgICAgXCJkb3dubG9hZHNfdXJsXCIgICAgIFwiaXNzdWVzX3VybFwiICAgICAgIFxuWzQwXSBcInB1bGxzX3VybFwiICAgICAgICAgXCJtaWxlc3RvbmVzX3VybFwiICAgIFwibm90aWZpY2F0aW9uc191cmxcIlxuWzQzXSBcImxhYmVsc191cmxcIiAgICAgICAgXCJyZWxlYXNlc191cmxcIiAgICAgIFwiZGVwbG95bWVudHNfdXJsXCIgIFxuWzQ2XSBcImNyZWF0ZWRfYXRcIiAgICAgICAgXCJ1cGRhdGVkX2F0XCIgICAgICAgIFwicHVzaGVkX2F0XCIgICAgICAgIFxuWzQ5XSBcImdpdF91cmxcIiAgICAgICAgICAgXCJzc2hfdXJsXCIgICAgICAgICAgIFwiY2xvbmVfdXJsXCIgICAgICAgIFxuWzUyXSBcInN2bl91cmxcIiAgICAgICAgICAgXCJob21lcGFnZVwiICAgICAgICAgIFwic2l6ZVwiICAgICAgICAgICAgIFxuWzU1XSBcInN0YXJnYXplcnNfY291bnRcIiAgXCJ3YXRjaGVyc19jb3VudFwiICAgIFwibGFuZ3VhZ2VcIiAgICAgICAgIFxuWzU4XSBcImhhc19pc3N1ZXNcIiAgICAgICAgXCJoYXNfZG93bmxvYWRzXCIgICAgIFwiaGFzX3dpa2lcIiAgICAgICAgIFxuWzYxXSBcImhhc19wYWdlc1wiICAgICAgICAgXCJmb3Jrc19jb3VudFwiICAgICAgIFwibWlycm9yX3VybFwiICAgICAgIFxuWzY0XSBcIm9wZW5faXNzdWVzX2NvdW50XCIgXCJmb3Jrc1wiICAgICAgICAgICAgIFwib3Blbl9pc3N1ZXNcIiAgICAgIFxuWzY3XSBcIndhdGNoZXJzXCIgICAgICAgICAgXCJkZWZhdWx0X2JyYW5jaFwiICAgXG4ifQ== -->
+<pre><code> [1] &quot;id&quot;                &quot;name&quot;              &quot;full_name&quot;        
+ [4] &quot;owner&quot;             &quot;private&quot;           &quot;html_url&quot;         
+ [7] &quot;description&quot;       &quot;fork&quot;              &quot;url&quot;              
+[10] &quot;forks_url&quot;         &quot;keys_url&quot;          &quot;collaborators_url&quot;
+[13] &quot;teams_url&quot;         &quot;hooks_url&quot;         &quot;issue_events_url&quot; 
+[16] &quot;events_url&quot;        &quot;assignees_url&quot;     &quot;branches_url&quot;     
+[19] &quot;tags_url&quot;          &quot;blobs_url&quot;         &quot;git_tags_url&quot;     
+[22] &quot;git_refs_url&quot;      &quot;trees_url&quot;         &quot;statuses_url&quot;     
+[25] &quot;languages_url&quot;     &quot;stargazers_url&quot;    &quot;contributors_url&quot; 
+[28] &quot;subscribers_url&quot;   &quot;subscription_url&quot;  &quot;commits_url&quot;      
+[31] &quot;git_commits_url&quot;   &quot;comments_url&quot;      &quot;issue_comment_url&quot;
+[34] &quot;contents_url&quot;      &quot;compare_url&quot;       &quot;merges_url&quot;       
+[37] &quot;archive_url&quot;       &quot;downloads_url&quot;     &quot;issues_url&quot;       
+[40] &quot;pulls_url&quot;         &quot;milestones_url&quot;    &quot;notifications_url&quot;
+[43] &quot;labels_url&quot;        &quot;releases_url&quot;      &quot;deployments_url&quot;  
+[46] &quot;created_at&quot;        &quot;updated_at&quot;        &quot;pushed_at&quot;        
+[49] &quot;git_url&quot;           &quot;ssh_url&quot;           &quot;clone_url&quot;        
+[52] &quot;svn_url&quot;           &quot;homepage&quot;          &quot;size&quot;             
+[55] &quot;stargazers_count&quot;  &quot;watchers_count&quot;    &quot;language&quot;         
+[58] &quot;has_issues&quot;        &quot;has_downloads&quot;     &quot;has_wiki&quot;         
+[61] &quot;has_pages&quot;         &quot;forks_count&quot;       &quot;mirror_url&quot;       
+[64] &quot;open_issues_count&quot; &quot;forks&quot;             &quot;open_issues&quot;      
+[67] &quot;watchers&quot;          &quot;default_branch&quot;   </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>jsonData$name</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcImFkdmRhdGFzY2lcIiAgICAgICAgICAgICAgXCJhZHZkYXRhc2NpLXN3aXJsXCIgICAgICAgXG4gWzNdIFwiYmFsbGdvd25cIiAgICAgICAgICAgICAgICBcImNhcGl0YWxJbjIxc3RDZW50dXJ5aW5SXCJcbiBbNV0gXCJjYXJlZXJwbGFubmluZ1wiICAgICAgICAgIFwiZGF0YWFuYWx5c2lzXCIgICAgICAgICAgIFxuIFs3XSBcImRhdGFzY2llbnRpc3RcIiAgICAgICAgICAgXCJkYXRhc2hhcmluZ1wiICAgICAgICAgICAgXG4gWzldIFwiZGF0YXdvbWVub250d2l0dGVyXCIgICAgICBcImRlcmZpbmRlclwiICAgICAgICAgICAgICBcblsxMV0gXCJkZXJmaW5kZXItMVwiICAgICAgICAgICAgIFwiRFNNXCIgICAgICAgICAgICAgICAgICAgIFxuWzEzXSBcIkVEQS1Qcm9qZWN0XCIgICAgICAgICAgICAgXCJmaXJzdHBhcGVyXCIgICAgICAgICAgICAgXG5bMTVdIFwiZnV0dXJlb2ZzdGF0c1wiICAgICAgICAgICBcImdlbm9taWNzcGFwZXJzXCIgICAgICAgICBcblsxN10gXCJnZW5zdGF0c1wiICAgICAgICAgICAgICAgIFwiZ2Vuc3RhdHNfc2l0ZVwiICAgICAgICAgIFxuWzE5XSBcImdvb2dsZUNpdGVcIiAgICAgICAgICAgICAgXCJncmFkdWF0ZVwiICAgICAgICAgICAgICAgXG5bMjFdIFwiaGVhbHRodmlzXCIgICAgICAgICAgICAgICBcImh5ZGVcIiAgICAgICAgICAgICAgICAgICBcblsyM10gXCJpbmNsYXNzZmViNjIwMTRcIiAgICAgICAgIFwiamhzcGg3NTNcIiAgICAgICAgICAgICAgIFxuWzI1XSBcImpoc3BoNzUzYW5kNFwiICAgICAgICAgICAgXCJqaHVkYXNoXCIgICAgICAgICAgICAgICAgXG5bMjddIFwiamh1ZGFzaC1yZWZ1Z2VlXCIgICAgICAgICBcImp0bGVlay5naXRodWIuaW9cIiAgICAgICBcblsyOV0gXCJsYW5nbWVhZC1sYWJcIiAgICAgICAgICAgIFwibGVhaFwiICAgICAgICAgICAgICAgICAgIFxuIn0= -->
+<pre><code> [1] &quot;advdatasci&quot;              &quot;advdatasci-swirl&quot;       
+ [3] &quot;ballgown&quot;                &quot;capitalIn21stCenturyinR&quot;
+ [5] &quot;careerplanning&quot;          &quot;dataanalysis&quot;           
+ [7] &quot;datascientist&quot;           &quot;datasharing&quot;            
+ [9] &quot;datawomenontwitter&quot;      &quot;derfinder&quot;              
+[11] &quot;derfinder-1&quot;             &quot;DSM&quot;                    
+[13] &quot;EDA-Project&quot;             &quot;firstpaper&quot;             
+[15] &quot;futureofstats&quot;           &quot;genomicspapers&quot;         
+[17] &quot;genstats&quot;                &quot;genstats_site&quot;          
+[19] &quot;googleCite&quot;              &quot;graduate&quot;               
+[21] &quot;healthvis&quot;               &quot;hyde&quot;                   
+[23] &quot;inclassfeb62014&quot;         &quot;jhsph753&quot;               
+[25] &quot;jhsph753and4&quot;            &quot;jhudash&quot;                
+[27] &quot;jhudash-refugee&quot;         &quot;jtleek.github.io&quot;       
+[29] &quot;langmead-lab&quot;            &quot;leah&quot;                   </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Exploring the data frame</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>table(sapply(jsonData,class))</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG4gY2hhcmFjdGVyIGRhdGEuZnJhbWUgICAgaW50ZWdlciAgICBsb2dpY2FsIFxuICAgICAgICA1MSAgICAgICAgICAxICAgICAgICAgIDkgICAgICAgICAgNyBcbiJ9 -->
+<pre><code>
+ character data.frame    integer    logical 
+        51          1          9          7 </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>dim(jsonData$owner)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIDMwIDE3XG4ifQ== -->
+<pre><code>[1] 30 17</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>names(jsonData$owner)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcImxvZ2luXCIgICAgICAgICAgICAgICBcImlkXCIgICAgICAgICAgICAgICAgICBcImF2YXRhcl91cmxcIiAgICAgICAgIFxuIFs0XSBcImdyYXZhdGFyX2lkXCIgICAgICAgICBcInVybFwiICAgICAgICAgICAgICAgICBcImh0bWxfdXJsXCIgICAgICAgICAgIFxuIFs3XSBcImZvbGxvd2Vyc191cmxcIiAgICAgICBcImZvbGxvd2luZ191cmxcIiAgICAgICBcImdpc3RzX3VybFwiICAgICAgICAgIFxuWzEwXSBcInN0YXJyZWRfdXJsXCIgICAgICAgICBcInN1YnNjcmlwdGlvbnNfdXJsXCIgICBcIm9yZ2FuaXphdGlvbnNfdXJsXCIgIFxuWzEzXSBcInJlcG9zX3VybFwiICAgICAgICAgICBcImV2ZW50c191cmxcIiAgICAgICAgICBcInJlY2VpdmVkX2V2ZW50c191cmxcIlxuWzE2XSBcInR5cGVcIiAgICAgICAgICAgICAgICBcInNpdGVfYWRtaW5cIiAgICAgICAgIFxuIn0= -->
+<pre><code> [1] &quot;login&quot;               &quot;id&quot;                  &quot;avatar_url&quot;         
+ [4] &quot;gravatar_id&quot;         &quot;url&quot;                 &quot;html_url&quot;           
+ [7] &quot;followers_url&quot;       &quot;following_url&quot;       &quot;gists_url&quot;          
+[10] &quot;starred_url&quot;         &quot;subscriptions_url&quot;   &quot;organizations_url&quot;  
+[13] &quot;repos_url&quot;           &quot;events_url&quot;          &quot;received_events_url&quot;
+[16] &quot;type&quot;                &quot;site_admin&quot;         </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>jsonData$owner$html_url</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIFsxXSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuIFszXSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuIFs1XSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuIFs3XSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuIFs5XSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuWzExXSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuWzEzXSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuWzE1XSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuWzE3XSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuWzE5XSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuWzIxXSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuWzIzXSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuWzI1XSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuWzI3XSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuWzI5XSBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIiBcImh0dHBzOi8vZ2l0aHViLmNvbS9qdGxlZWtcIlxuIn0= -->
+<pre><code> [1] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
+ [3] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
+ [5] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
+ [7] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
+ [9] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
+[11] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
+[13] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
+[15] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
+[17] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
+[19] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
+[21] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
+[23] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
+[25] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
+[27] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;
+[29] &quot;https://github.com/jtleek&quot; &quot;https://github.com/jtleek&quot;</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-chunk-end -->
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
+</div>
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiU0lTQklEIGRheSAyIGNvZGUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCkluc3RhbGxpbmcgZ29vZ2xlIHNoZWV0cwpgYGB7cn0KbGlicmFyeShkZXZ0b29scykKaW5zdGFsbF9naXRodWIoImplbm55YmMvZ29vZ2xlc2hlZXRzIikKbGlicmFyeShnb29nbGVzaGVldHMpCmBgYAoKUmVhZGluZyBhIGdvb2dsZSBzaGVldAoKYGBge3J9CnNoZWV0c191cmwgPSAiaHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vc3ByZWFkc2hlZXRzL2QvMThLUVFkNExZNWs4VWN1eDFNdldDc1FHUUpsdmQwRUNUbm4tM2l4ZE9LRk0vcHViaHRtbCIKZ3N1cmwxID0gZ3NfdXJsKHNoZWV0c191cmwpCmRhdCA9IGdzX3JlYWQoZ3N1cmwxKQpkYXRlX2FjY2Vzc2VkID0gZGF0ZSgpCmRhdGVfYWNjZXNzZWQKYGBgCgoKTG9vayBhdCB0aGUgcmVzdWx0CgpgYGB7ciBsb29rYXRyZXN1bHR9CmRhdApgYGAKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiU0lTQklEIGRheSAyIGNvZGUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCkluc3RhbGxpbmcgZ29vZ2xlIHNoZWV0cwpgYGB7cn0KbGlicmFyeShkZXZ0b29scykKaW5zdGFsbF9naXRodWIoImplbm55YmMvZ29vZ2xlc2hlZXRzIikKbGlicmFyeShnb29nbGVzaGVldHMpCmBgYAoKUmVhZGluZyBhIGdvb2dsZSBzaGVldAoKYGBge3J9CnNoZWV0c191cmwgPSAiaHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vc3ByZWFkc2hlZXRzL2QvMThLUVFkNExZNWs4VWN1eDFNdldDc1FHUUpsdmQwRUNUbm4tM2l4ZE9LRk0vcHViaHRtbCIKZ3N1cmwxID0gZ3NfdXJsKHNoZWV0c191cmwpCmRhdCA9IGdzX3JlYWQoZ3N1cmwxKQpkYXRlX2FjY2Vzc2VkID0gZGF0ZSgpCmRhdGVfYWNjZXNzZWQKYGBgCgoKTG9vayBhdCB0aGUgcmVzdWx0CgpgYGB7ciBsb29rYXRyZXN1bHR9CmRhdApgYGAKCgpEb2luZyB0aGUgbGFiCgpgYGB7cn0KYWJvdXR1cyA9ICJodHRwczovL2RvY3MuZ29vZ2xlLmNvbS9zcHJlYWRzaGVldHMvZC8xMDN2VW9mdHYyZExOWl9GY0F6MDhiNXB0SWtXTjRXMlJhRm43VkYzOUZKOC9lZGl0I2dpZD0wIgpnc3VybF9hYm91dCA9IGdzX3VybChhYm91dHVzKQpkYXQgPSBnc19yZWFkKGdzdXJsX2Fib3V0KQpkYXRlX2FjY2Vzc2VkID0gZGF0ZSgpCmRhdGVfYWNjZXNzZWQKYGBgCgpSZWFkIGp1c3QgdGhlIGZpcnN0IHR3byBjb2x1bW5zCmBgYHtyfQoKZGF0MiA9IGdzX3JlYWQoZ3N1cmxfYWJvdXQscmFuZ2U9Y2VsbF9jb2xzKDE6MikpCmRhdDIKYGBgCgpGaW5kIG91dCBob3cgbWFueSB5ZWFycyBvZiBSIGV4cGVyaWVuY2UKCmBgYHtyfQpkYXQgPSBnc19yZWFkKGdzdXJsX2Fib3V0KQpkYXQKbWVhbihhcy5udW1lcmljKGRhdCRgWWVhcnMgb2YgUiBleHBlcmllbmNlYCksbmEucm09VCkKbG9naWNhbF90d29feWVhcnMgPSBhcy5udW1lcmljKGRhdCRgWWVhcnMgb2YgUiBleHBlcmllbmNlYCkgPiAyCmxvZ2ljYWxfdHdvX3llYXJzCmBgYAoKCiMjIERvaW5nIEpTT04gc3R1ZmYgbm93CgpJbnN0YWxsIHN0dWZmCmBgYHtyfQojaW5zdGFsbC5wYWNrYWdlcygianNvbmxpdGUiKQpsaWJyYXJ5KGpzb25saXRlKQpgYGAKCgpSZWFkIGluIEpTT04gZGF0YQoKYGBge3J9CmdpdGh1Yl91cmwgPSAiaHR0cHM6Ly9hcGkuZ2l0aHViLmNvbS91c2Vycy9qdGxlZWsvcmVwb3MiCmpzb25EYXRhIDwtIGZyb21KU09OKGdpdGh1Yl91cmwpCmRpbShqc29uRGF0YSkKbmFtZXMoanNvbkRhdGEpCmpzb25EYXRhJG5hbWUKYGBgCgoKRXhwbG9yaW5nIHRoZSBkYXRhIGZyYW1lCgpgYGB7cn0KdGFibGUoc2FwcGx5KGpzb25EYXRhLGNsYXNzKSkKZGltKGpzb25EYXRhJG93bmVyKQpuYW1lcyhqc29uRGF0YSRvd25lcikKanNvbkRhdGEkb3duZXIkaHRtbF91cmwKYGBgCgo=</div>
 
 
 
