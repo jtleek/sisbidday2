@@ -142,9 +142,107 @@ $(document).ready(function () {
 
 
 <!-- rnb-text-begin -->
+<p>Installing google sheets</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>install.packages(&quot;googlesheets&quot;)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiYWxzbyBpbnN0YWxsaW5nIHRoZSBkZXBlbmRlbmN5IOKAmHhtbDLigJlcblxudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi9tYWNvc3gvbWF2ZXJpY2tzL2NvbnRyaWIvMy4zL3htbDJfMS4wLjAudGd6J1xuQ29udGVudCB0eXBlICdhcHBsaWNhdGlvbi94LWd6aXAnIGxlbmd0aCA3MzM5ODUgYnl0ZXMgKDcxNiBLQilcbj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09XG5kb3dubG9hZGVkIDcxNiBLQlxuXG50cnlpbmcgVVJMICdodHRwczovL2NyYW4ucnN0dWRpby5jb20vYmluL21hY29zeC9tYXZlcmlja3MvY29udHJpYi8zLjMvZ29vZ2xlc2hlZXRzXzAuMi4xLnRneidcbkNvbnRlbnQgdHlwZSAnYXBwbGljYXRpb24veC1nemlwJyBsZW5ndGggMTYwODI0OSBieXRlcyAoMS41IE1CKVxuPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT1cbmRvd25sb2FkZWQgMS41IE1CXG4ifQ== -->
+<pre><code>also installing the dependency ‘xml2’
+
+trying URL 'https://cran.rstudio.com/bin/macosx/mavericks/contrib/3.3/xml2_1.0.0.tgz'
+Content type 'application/x-gzip' length 733985 bytes (716 KB)
+==================================================
+downloaded 716 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/mavericks/contrib/3.3/googlesheets_0.2.1.tgz'
+Content type 'application/x-gzip' length 1608249 bytes (1.5 MB)
+==================================================
+downloaded 1.5 MB</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5UaGUgZG93bmxvYWRlZCBiaW5hcnkgcGFja2FnZXMgYXJlIGluXG5cdC92YXIvZm9sZGVycy94cy9iZzdfMzR0ZDc5bGYycDNxN2diM3BzdjgwMDAwZ24vVC8vUnRtcE43b2s3Wi9kb3dubG9hZGVkX3BhY2thZ2VzXG4ifQ== -->
+<pre><code>
+The downloaded binary packages are in
+    /var/folders/xs/bg7_34td79lf2p3q7gb3psv80000gn/T//RtmpN7ok7Z/downloaded_packages</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>library(googlesheets)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Reading a google sheet</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>sheets_url = &quot;https://docs.google.com/spreadsheets/d/18KQQd4LY5k8Ucux1MvWCsQGQJlvd0ECTnn-3ixdOKFM/pubhtml&quot;
+gsurl1 = gs_url(sheets_url)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiU2hlZXQtaWRlbnRpZnlpbmcgaW5mbyBhcHBlYXJzIHRvIGJlIGEgYnJvd3NlciBVUkwuXG5nb29nbGVzaGVldHMgd2lsbCBhdHRlbXB0IHRvIGV4dHJhY3Qgc2hlZXQga2V5IGZyb20gdGhlIFVSTC5cblB1dGF0aXZlIGtleTogMThLUVFkNExZNWs4VWN1eDFNdldDc1FHUUpsdmQwRUNUbm4tM2l4ZE9LRk1cbldvcmtzaGVldHMgZmVlZCBjb25zdHJ1Y3RlZCB3aXRoIHB1YmxpYyB2aXNpYmlsaXR5XG4ifQ== -->
+<pre><code>Sheet-identifying info appears to be a browser URL.
+googlesheets will attempt to extract sheet key from the URL.
+Putative key: 18KQQd4LY5k8Ucux1MvWCsQGQJlvd0ECTnn-3ixdOKFM
+Worksheets feed constructed with public visibility</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>dat = gs_read(gsurl1)</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiQWNjZXNzaW5nIHdvcmtzaGVldCB0aXRsZWQgJ1NoZWV0MScuXG4ifQ== -->
+<pre><code>Accessing worksheet titled 'Sheet1'.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiXG5Eb3dubG9hZGluZzogNjMwIEIgICAgIFxuRG93bmxvYWRpbmc6IDYzMCBCICAgICBcbkRvd25sb2FkaW5nOiA2NDAgQiAgICAgXG5Eb3dubG9hZGluZzogNjQwIEIgICAgIFxuRG93bmxvYWRpbmc6IDY0MCBCICAgICBcbkRvd25sb2FkaW5nOiA2NDAgQiAgICAgXG4ifQ== -->
+<pre><code>
+Downloading: 630 B     
+Downloading: 630 B     
+Downloading: 640 B     
+Downloading: 640 B     
+Downloading: 640 B     
+Downloading: 640 B     </code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiTm8gZW5jb2Rpbmcgc3VwcGxpZWQ6IGRlZmF1bHRpbmcgdG8gVVRGLTguXG4ifQ== -->
+<pre><code>No encoding supplied: defaulting to UTF-8.</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>date_accessed = date()
+date_accessed</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiWzFdIFwiVHVlIEp1bCAxMiAxMTo0Nzo0NCAyMDE2XCJcbiJ9 -->
+<pre><code>[1] &quot;Tue Jul 12 11:47:44 2016&quot;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
+<p>Look at the result</p>
+<!-- rnb-text-end -->
+<!-- rnb-chunk-begin -->
+<!-- rnb-source-begin -->
+<pre class="r"><code>dat</code></pre>
+<!-- rnb-source-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiIyBBIHRpYmJsZTogNjkgeCAxM1xuICAgICBHaXQgR2l0aHViICAgICBSIFJzdHVkaW9cbiAgIDxpbnQ+ICA8aW50PiA8aW50PiAgIDxpbnQ+XG4xICAgICAgMCAgICAgIDAgICAgIDMgICAgICAgMFxuMiAgICAgIDAgICAgICAxICAgICAxICAgICAgIDFcbjMgICAgICAyICAgICAgMSAgICAgNCAgICAgICA0XG40ICAgICAgMSAgICAgIDIgICAgIDUgICAgICAgNlxuNSAgICAgIDEgICAgICAxICAgICA3ICAgICAgIDdcbjYgICAgICAxICAgICAgMSAgICAgMiAgICAgICAyXG43ICAgICAgMCAgICAgIDAgICAgIDUgICAgICAgNVxuOCAgICAgIDEgICAgICAxICAgICA4ICAgICAgIDZcbjkgICAgICA2ICAgICAgNiAgICAgOCAgICAgICA0XG4xMCAgICAgMiAgICAgIDIgICAgIDMgICAgICAgM1xuIyAuLi4gd2l0aCA1OSBtb3JlIHJvd3MsIGFuZCA5IG1vcmUgdmFyaWFibGVzOlxuIyAgIFJlcHJvZHVjaWJsZSBSZXNlYXJjaCA8aW50PiwgUiBtYXJrZG93biA8aW50PixcbiMgICBEYXRhIGltcG9ydCA8aW50PiwgV2ViIHNjcmFwaW5nIDxpbnQ+LCBEYXRhXG4jICAgY2xlYW5pbmcgPGludD4sIGRwbHlyIDxpbnQ+LFxuIyAgIEJpb2NvbmR1Y3RvciA8aW50PiwgUmVndWxhciBleHByZXNzaW9ucyA8aW50PixcbiMgICBYMTMgPGludD5cbiJ9 -->
+<pre><code># A tibble: 69 x 13
+     Git Github     R Rstudio
+   &lt;int&gt;  &lt;int&gt; &lt;int&gt;   &lt;int&gt;
+1      0      0     3       0
+2      0      1     1       1
+3      2      1     4       4
+4      1      2     5       6
+5      1      1     7       7
+6      1      1     2       2
+7      0      0     5       5
+8      1      1     8       6
+9      6      6     8       4
+10     2      2     3       3
+# ... with 59 more rows, and 9 more variables:
+#   Reproducible Research &lt;int&gt;, R markdown &lt;int&gt;,
+#   Data import &lt;int&gt;, Web scraping &lt;int&gt;, Data
+#   cleaning &lt;int&gt;, dplyr &lt;int&gt;,
+#   Bioconductor &lt;int&gt;, Regular expressions &lt;int&gt;,
+#   X13 &lt;int&gt;</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-chunk-end -->
+<!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiU0lTQklEIGRheSAyIGNvZGUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0K</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiU0lTQklEIGRheSAyIGNvZGUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCkluc3RhbGxpbmcgZ29vZ2xlIHNoZWV0cwpgYGB7cn0KaW5zdGFsbC5wYWNrYWdlcygiZ29vZ2xlc2hlZXRzIikKbGlicmFyeShnb29nbGVzaGVldHMpCmBgYAoKUmVhZGluZyBhIGdvb2dsZSBzaGVldAoKYGBge3J9CnNoZWV0c191cmwgPSAiaHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vc3ByZWFkc2hlZXRzL2QvMThLUVFkNExZNWs4VWN1eDFNdldDc1FHUUpsdmQwRUNUbm4tM2l4ZE9LRk0vcHViaHRtbCIKZ3N1cmwxID0gZ3NfdXJsKHNoZWV0c191cmwpCmRhdCA9IGdzX3JlYWQoZ3N1cmwxKQpkYXRlX2FjY2Vzc2VkID0gZGF0ZSgpCmRhdGVfYWNjZXNzZWQKYGBgCgoKTG9vayBhdCB0aGUgcmVzdWx0CgpgYGB7ciBsb29rYXRyZXN1bHR9CmRhdApgYGAKCg==</div>
 
 
 
