@@ -5,7 +5,8 @@ output: html_notebook
 
 Installing google sheets
 ```{r}
-install.packages("googlesheets")
+library(devtools)
+install_github("jennybc/googlesheets")
 library(googlesheets)
 ```
 

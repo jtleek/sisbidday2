@@ -146,25 +146,54 @@ $(document).ready(function () {
 <!-- rnb-text-end -->
 <!-- rnb-chunk-begin -->
 <!-- rnb-source-begin -->
-<pre class="r"><code>install.packages(&quot;googlesheets&quot;)</code></pre>
+<pre class="r"><code>library(devtools)
+install_github(&quot;jennybc/googlesheets&quot;)</code></pre>
 <!-- rnb-source-end -->
-<!-- rnb-output-begin eyJkYXRhIjoiYWxzbyBpbnN0YWxsaW5nIHRoZSBkZXBlbmRlbmN5IOKAmHhtbDLigJlcblxudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi9tYWNvc3gvbWF2ZXJpY2tzL2NvbnRyaWIvMy4zL3htbDJfMS4wLjAudGd6J1xuQ29udGVudCB0eXBlICdhcHBsaWNhdGlvbi94LWd6aXAnIGxlbmd0aCA3MzM5ODUgYnl0ZXMgKDcxNiBLQilcbj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09XG5kb3dubG9hZGVkIDcxNiBLQlxuXG50cnlpbmcgVVJMICdodHRwczovL2NyYW4ucnN0dWRpby5jb20vYmluL21hY29zeC9tYXZlcmlja3MvY29udHJpYi8zLjMvZ29vZ2xlc2hlZXRzXzAuMi4xLnRneidcbkNvbnRlbnQgdHlwZSAnYXBwbGljYXRpb24veC1nemlwJyBsZW5ndGggMTYwODI0OSBieXRlcyAoMS41IE1CKVxuPT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT1cbmRvd25sb2FkZWQgMS41IE1CXG4ifQ== -->
-<pre><code>also installing the dependency ‘xml2’
-
-trying URL 'https://cran.rstudio.com/bin/macosx/mavericks/contrib/3.3/xml2_1.0.0.tgz'
-Content type 'application/x-gzip' length 733985 bytes (716 KB)
+<!-- rnb-output-begin eyJkYXRhIjoiRG93bmxvYWRpbmcgR2l0SHViIHJlcG8gamVubnliYy9nb29nbGVzaGVldHNAbWFzdGVyXG5mcm9tIFVSTCBodHRwczovL2FwaS5naXRodWIuY29tL3JlcG9zL2plbm55YmMvZ29vZ2xlc2hlZXRzL3ppcGJhbGwvbWFzdGVyXG5JbnN0YWxsaW5nIGdvb2dsZXNoZWV0c1xuSW5zdGFsbGluZyAzIHBhY2thZ2VzOiBodHRyLCBtaW1lLCBwdXJyclxudHJ5aW5nIFVSTCAnaHR0cHM6Ly9jcmFuLnJzdHVkaW8uY29tL2Jpbi9tYWNvc3gvbWF2ZXJpY2tzL2NvbnRyaWIvMy4zL2h0dHJfMS4yLjEudGd6J1xuQ29udGVudCB0eXBlICdhcHBsaWNhdGlvbi94LWd6aXAnIGxlbmd0aCAyNzA3MzkgYnl0ZXMgKDI2NCBLQilcbj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09XG5kb3dubG9hZGVkIDI2NCBLQlxuXG50cnlpbmcgVVJMICdodHRwczovL2NyYW4ucnN0dWRpby5jb20vYmluL21hY29zeC9tYXZlcmlja3MvY29udHJpYi8zLjMvbWltZV8wLjUudGd6J1xuQ29udGVudCB0eXBlICdhcHBsaWNhdGlvbi94LWd6aXAnIGxlbmd0aCAyNDg4NCBieXRlcyAoMjQgS0IpXG49PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PVxuZG93bmxvYWRlZCAyNCBLQlxuXG50cnlpbmcgVVJMICdodHRwczovL2NyYW4ucnN0dWRpby5jb20vYmluL21hY29zeC9tYXZlcmlja3MvY29udHJpYi8zLjMvcHVycnJfMC4yLjIudGd6J1xuQ29udGVudCB0eXBlICdhcHBsaWNhdGlvbi94LWd6aXAnIGxlbmd0aCA4MjIxNDQgYnl0ZXMgKDgwMiBLQilcbj09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09PT09XG5kb3dubG9hZGVkIDgwMiBLQlxuIn0= -->
+<pre><code>Downloading GitHub repo jennybc/googlesheets@master
+from URL https://api.github.com/repos/jennybc/googlesheets/zipball/master
+Installing googlesheets
+Installing 3 packages: httr, mime, purrr
+trying URL 'https://cran.rstudio.com/bin/macosx/mavericks/contrib/3.3/httr_1.2.1.tgz'
+Content type 'application/x-gzip' length 270739 bytes (264 KB)
 ==================================================
-downloaded 716 KB
+downloaded 264 KB
 
-trying URL 'https://cran.rstudio.com/bin/macosx/mavericks/contrib/3.3/googlesheets_0.2.1.tgz'
-Content type 'application/x-gzip' length 1608249 bytes (1.5 MB)
+trying URL 'https://cran.rstudio.com/bin/macosx/mavericks/contrib/3.3/mime_0.5.tgz'
+Content type 'application/x-gzip' length 24884 bytes (24 KB)
 ==================================================
-downloaded 1.5 MB</code></pre>
+downloaded 24 KB
+
+trying URL 'https://cran.rstudio.com/bin/macosx/mavericks/contrib/3.3/purrr_0.2.2.tgz'
+Content type 'application/x-gzip' length 822144 bytes (802 KB)
+==================================================
+downloaded 802 KB</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-output-begin eyJkYXRhIjoiXG5UaGUgZG93bmxvYWRlZCBiaW5hcnkgcGFja2FnZXMgYXJlIGluXG5cdC92YXIvZm9sZGVycy94cy9iZzdfMzR0ZDc5bGYycDNxN2diM3BzdjgwMDAwZ24vVC8vUnRtcE43b2s3Wi9kb3dubG9hZGVkX3BhY2thZ2VzXG4ifQ== -->
 <pre><code>
 The downloaded binary packages are in
     /var/folders/xs/bg7_34td79lf2p3q7gb3psv80000gn/T//RtmpN7ok7Z/downloaded_packages</code></pre>
+<!-- rnb-output-end -->
+<!-- rnb-output-begin eyJkYXRhIjoiJy9MaWJyYXJ5L0ZyYW1ld29ya3MvUi5mcmFtZXdvcmsvUmVzb3VyY2VzL2Jpbi9SJyAgXFxcbiAgLS1uby1zaXRlLWZpbGUgLS1uby1lbnZpcm9uIC0tbm8tc2F2ZSAgXFxcbiAgLS1uby1yZXN0b3JlIC0tcXVpZXQgQ01EIElOU1RBTEwgIFxcXG4gICcvcHJpdmF0ZS92YXIvZm9sZGVycy94cy9iZzdfMzR0ZDc5bGYycDNxN2diM3BzdjgwMDAwZ24vVC9SdG1wTjdvazdaL2RldnRvb2xzMjgwNTUzMzY4YjAvamVubnliYy1nb29nbGVzaGVldHMtZGU0MDdhOCcgIFxcXG4gIC0tbGlicmFyeT0nL0xpYnJhcnkvRnJhbWV3b3Jrcy9SLmZyYW1ld29yay9WZXJzaW9ucy8zLjMvUmVzb3VyY2VzL2xpYnJhcnknICBcXFxuICAtLWluc3RhbGwtdGVzdHMgXG5cbiogaW5zdGFsbGluZyAqc291cmNlKiBwYWNrYWdlIOKAmGdvb2dsZXNoZWV0c+KAmSAuLi5cbioqIFJcbioqIGluc3RcbioqIHRlc3RzXG4qKiBwcmVwYXJpbmcgcGFja2FnZSBmb3IgbGF6eSBsb2FkaW5nXG4qKiBoZWxwXG4qKiogaW5zdGFsbGluZyBoZWxwIGluZGljZXNcbioqIGJ1aWxkaW5nIHBhY2thZ2UgaW5kaWNlc1xuKiogaW5zdGFsbGluZyB2aWduZXR0ZXNcbioqIHRlc3RpbmcgaWYgaW5zdGFsbGVkIHBhY2thZ2UgY2FuIGJlIGxvYWRlZFxuKiBET05FIChnb29nbGVzaGVldHMpXG5SZWxvYWRpbmcgaW5zdGFsbGVkIGdvb2dsZXNoZWV0c1xuIn0= -->
+<pre><code>'/Library/Frameworks/R.framework/Resources/bin/R'  \
+  --no-site-file --no-environ --no-save  \
+  --no-restore --quiet CMD INSTALL  \
+  '/private/var/folders/xs/bg7_34td79lf2p3q7gb3psv80000gn/T/RtmpN7ok7Z/devtools280553368b0/jennybc-googlesheets-de407a8'  \
+  --library='/Library/Frameworks/R.framework/Versions/3.3/Resources/library'  \
+  --install-tests 
+
+* installing *source* package ‘googlesheets’ ...
+** R
+** inst
+** tests
+** preparing package for lazy loading
+** help
+*** installing help indices
+** building package indices
+** installing vignettes
+** testing if installed package can be loaded
+* DONE (googlesheets)
+Reloading installed googlesheets</code></pre>
 <!-- rnb-output-end -->
 <!-- rnb-source-begin -->
 <pre class="r"><code>library(googlesheets)</code></pre>
@@ -242,7 +271,7 @@ date_accessed</code></pre>
 <!-- rnb-text-begin -->
 <!-- rnb-text-end -->
 
-<div id="rmd-source-code">LS0tCnRpdGxlOiAiU0lTQklEIGRheSAyIGNvZGUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCkluc3RhbGxpbmcgZ29vZ2xlIHNoZWV0cwpgYGB7cn0KaW5zdGFsbC5wYWNrYWdlcygiZ29vZ2xlc2hlZXRzIikKbGlicmFyeShnb29nbGVzaGVldHMpCmBgYAoKUmVhZGluZyBhIGdvb2dsZSBzaGVldAoKYGBge3J9CnNoZWV0c191cmwgPSAiaHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vc3ByZWFkc2hlZXRzL2QvMThLUVFkNExZNWs4VWN1eDFNdldDc1FHUUpsdmQwRUNUbm4tM2l4ZE9LRk0vcHViaHRtbCIKZ3N1cmwxID0gZ3NfdXJsKHNoZWV0c191cmwpCmRhdCA9IGdzX3JlYWQoZ3N1cmwxKQpkYXRlX2FjY2Vzc2VkID0gZGF0ZSgpCmRhdGVfYWNjZXNzZWQKYGBgCgoKTG9vayBhdCB0aGUgcmVzdWx0CgpgYGB7ciBsb29rYXRyZXN1bHR9CmRhdApgYGAKCg==</div>
+<div id="rmd-source-code">LS0tCnRpdGxlOiAiU0lTQklEIGRheSAyIGNvZGUiCm91dHB1dDogaHRtbF9ub3RlYm9vawotLS0KCkluc3RhbGxpbmcgZ29vZ2xlIHNoZWV0cwpgYGB7cn0KbGlicmFyeShkZXZ0b29scykKaW5zdGFsbF9naXRodWIoImplbm55YmMvZ29vZ2xlc2hlZXRzIikKbGlicmFyeShnb29nbGVzaGVldHMpCmBgYAoKUmVhZGluZyBhIGdvb2dsZSBzaGVldAoKYGBge3J9CnNoZWV0c191cmwgPSAiaHR0cHM6Ly9kb2NzLmdvb2dsZS5jb20vc3ByZWFkc2hlZXRzL2QvMThLUVFkNExZNWs4VWN1eDFNdldDc1FHUUpsdmQwRUNUbm4tM2l4ZE9LRk0vcHViaHRtbCIKZ3N1cmwxID0gZ3NfdXJsKHNoZWV0c191cmwpCmRhdCA9IGdzX3JlYWQoZ3N1cmwxKQpkYXRlX2FjY2Vzc2VkID0gZGF0ZSgpCmRhdGVfYWNjZXNzZWQKYGBgCgoKTG9vayBhdCB0aGUgcmVzdWx0CgpgYGB7ciBsb29rYXRyZXN1bHR9CmRhdApgYGAKCg==</div>
 
 
 
