@@ -223,7 +223,7 @@ str(oct4_dat)
 Do the transcript part
 
 ```{r}
-oct4_dat$Transcript
+str(oct4_dat$Transcript)
 ```
 
 Change genes
@@ -234,6 +234,8 @@ str(newgene_dat)
 
 Get the gene info at http://rest.ensembl.org/documentation/info/symbol_lookup.
 
+
+
 Here is the example `/lookup/symbol/homo_sapiens/BRCA2?content-type=application/json;expand=1` and modify it with our gene like so: `/lookup/symbol/homo_sapiens/BRAF?content-type=application/json;expand=1`
 We'd crete the url using the base url like this: `http://rest.ensembl.org//lookup/symbol/homo_sapiens/BRAF?content-type=application/json;expand=1`
 We'd request the information with fromJSON
@@ -241,6 +243,19 @@ We'd request the information with fromJSON
 ```{r}
 braf_info = fromJSON("http://rest.ensembl.org//lookup/symbol/homo_sapiens/BRAF?content-type=application/json;expand=1")
 braf_info$id
+braf_info$display_name
 ```
 
+
+```{r}
+ids = c("ENSG00000157764","ENSG00000141510")
+dat = vector(2,mode="list")
+for(i in 1:2){
+  base_url = "http://rest.ensembl.org//lookup/id/"
+  tail_url = "?content-type=application/json;expand=1"
+  url_want = paste0(base_url,ids[i],tail_url)
+  dat[[i]] = fromJSON("http://rest.ensembl.org//lookup/id/ENSG00000141510?content-type=application/json;expand=1")
+  Sys.sleep(2)
+}
+```
 
